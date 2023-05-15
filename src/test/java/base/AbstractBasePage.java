@@ -3,33 +3,36 @@ package base;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.time.Duration;
 import java.util.List;
+
+import static java.time.Duration.ofMillis;
+import static org.openqa.selenium.support.ui.ExpectedConditions.*;
 
 abstract public class AbstractBasePage {
     protected WebDriver driver;
     protected WebDriverWait wait;
-    protected Actions actions;
+    private int BASE_WAIT = 5000;
 
     public AbstractBasePage(WebDriver driver) {
         this.driver = driver;
-        this.wait = new WebDriverWait(driver, Duration.ofMillis(5000));
-        this.actions = new Actions(driver);
+        wait = new WebDriverWait(driver, ofMillis(BASE_WAIT));
     }
 
-    public WebElement getVisibleElementByXpath(String element) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(element)));
-        return driver.findElement(By.xpath(element));
+    protected WebElement waitUntilElementToBeVisibleByXpath(String locator) {
+        return wait.until(visibilityOfElementLocated(By.xpath(locator)));
     }
 
-    public List<WebElement> getListOfVisibleElementsByXpath(String element) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(element)));
-        return driver.findElements(By.xpath(element));
+    protected WebElement waitUntilElementToBeClickableByXpath(String locator) {
+        return wait.until(elementToBeClickable(By.xpath(locator)));
+    }
+
+    protected WebElement waitUntilPresenceOfElementByXpath(String locator) {
+        return wait.until(presenceOfElementLocated(By.xpath(locator)));
+    }
+
+    protected List<WebElement> waitUntilPresenceOfAllElementsByXpath(String locator) {
+        return wait.until(presenceOfAllElementsLocatedBy(By.xpath(locator)));
     }
 }

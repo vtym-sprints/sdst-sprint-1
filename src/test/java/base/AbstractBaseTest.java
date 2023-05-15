@@ -6,7 +6,8 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
 abstract public class AbstractBaseTest {
-    protected static WebDriver driver;
+
+    protected WebDriver driver;
 
     @BeforeMethod
     public void openWindow() {
@@ -19,11 +20,19 @@ abstract public class AbstractBaseTest {
         driver.quit();
     }
 
+    public WebDriver getDriver() {
+        return driver;
+    }
+
     public void openPage(String url) {
         driver.get(url);
     }
 
     public String getURL() {
         return driver.getCurrentUrl();
+    }
+
+    public boolean urlContains(String urlPath) {
+        return driver.getCurrentUrl().contains(urlPath);
     }
 }
