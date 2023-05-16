@@ -1,15 +1,13 @@
 package tests;
 
 import base.AbstractBaseTest;
-import base.CommonActions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.HomePage;
-import pages.MotorcyclerPage;
 
-public class TestFollowingBmwUsa extends AbstractBaseTest {
+public class TestBmwMotorcycles extends AbstractBaseTest {
     @Test
-    public void testFollowingBmwUsa() {
+    public void testBmwMotorcycles() {
         HomePage homePage = new HomePage(driver);
 
         homePage
