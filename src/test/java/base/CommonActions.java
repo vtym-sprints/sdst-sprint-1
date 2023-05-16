@@ -20,4 +20,9 @@ public class CommonActions {
         Actions actions = new Actions(driver);
         actions.moveToElement(element).build().perform();
     }
+
+    public static void jsClick(WebElement element, WebDriver driver) {
+        JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+        jsExecutor.executeScript("arguments[0].click();", element);
+    }
 }

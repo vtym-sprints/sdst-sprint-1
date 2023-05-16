@@ -1,24 +1,34 @@
 package pages;
 
-import base.AbstractBasePage;
+import elements.HomePageElements;
+import elements.SearchResultElements;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
-public class HomePage extends AbstractBasePage {
+import static base.CommonActions.jsClick;
+
+public class HomePage extends HomePageElements {
 
     public HomePage(WebDriver driver) {
         super(driver);
     }
 
-    private static final String CARS_IN_AVAILABILITY = "//a[@id='button-f4e1544f40'] ";
+    public HomePage closePopup() {
+        jsClick(waitUntilPresenceOfElementByXpath(POPUP), driver);
 
-    public WebElement getCarsInAvailabilityButton() {
-        return waitUntilElementToBeClickableByXpath(CARS_IN_AVAILABILITY);
-    }
-
-    public HomePage clickCarsInAvailability() {
-        getCarsInAvailabilityButton().click();
         return this;
     }
 
+    public HomePage clickSearchBtn() {
+        waitUntilPresenceOfElementByXpath(SEARCH_BTN).click();
+
+        return this;
+    }
+
+    public SearchResultElements enterSearchInfo(String info) {
+        waitUntilElementToBeVisibleByXpath(SEARCH_FIELD).sendKeys(info);
+        waitUntilElementToBeVisibleByXpath(SEARCH_FIELD).sendKeys(Keys.ENTER);
+
+        return new SearchResultPage(driver);
+    }
 }
