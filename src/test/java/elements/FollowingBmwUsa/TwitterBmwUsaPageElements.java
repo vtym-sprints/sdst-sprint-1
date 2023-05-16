@@ -1,0 +1,11 @@
+package elements.FollowingBmwUsa;
+
+import base.AbstractBasePage;
+import org.openqa.selenium.WebDriver;
+
+public class TwitterBmwUsaPageElements extends AbstractBasePage {
+    public TwitterBmwUsaPageElements(WebDriver driver) {
+        super(driver);
+    }
+    protected static final String NAME_HEADER_TWITTER = "//div[@data-testid='UserName']//span[contains(text(),'BMW USA')]";
+}
