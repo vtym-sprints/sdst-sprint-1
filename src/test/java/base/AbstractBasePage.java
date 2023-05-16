@@ -3,8 +3,10 @@ package base;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static java.time.Duration.ofMillis;
@@ -34,5 +36,15 @@ abstract public class AbstractBasePage {
 
     protected List<WebElement> waitUntilPresenceOfAllElementsByXpath(String locator) {
         return wait.until(presenceOfAllElementsLocatedBy(By.xpath(locator)));
+    }
+
+    public void goToNextTab(int tabNumber) {
+        waitUntilNumberOfTabToBe(tabNumber);
+        ArrayList<String> tabs = new ArrayList<>(driver.getWindowHandles());
+        driver.switchTo().window(tabs.get(tabNumber - 1));
+    }
+
+    public void waitUntilNumberOfTabToBe(int tabNumber) {
+        wait.until(ExpectedConditions.numberOfWindowsToBe(tabNumber));
     }
 }
