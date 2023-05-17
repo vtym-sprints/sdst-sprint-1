@@ -1,10 +1,9 @@
 package pages.FollowingPages;
 
-import elements.FollowingBmwUsa.TwitterBmwUsaPageElements;
+import elements.FollowingBmwUsa.TwitterBmwUsaElements;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
-public class TwitterFollowPage extends TwitterBmwUsaPageElements {
+public class TwitterFollowPage extends TwitterBmwUsaElements {
     public TwitterFollowPage(WebDriver driver) {
         super(driver);
     }

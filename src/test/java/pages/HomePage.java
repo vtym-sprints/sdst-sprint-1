@@ -22,10 +22,12 @@ public class HomePage extends HomePageElements {
         getCarsInAvailabilityButton().click();
         return this;
     }
+
     public void clickAndSwitchToFollowingPage(String locator) {
         waitUntilElementToBeClickableByXpath(locator).click();
         goToNextTab(2);
     }
+
     public void closeAndSwitchToHomePage() {
         driver.close();
         goToNextTab(1);

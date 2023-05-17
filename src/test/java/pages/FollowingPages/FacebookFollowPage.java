@@ -1,9 +1,9 @@
 package pages.FollowingPages;
 
-import elements.FollowingBmwUsa.FacebookBmwUsaPageElements;
+import elements.FollowingBmwUsa.FacebookBmwUsaElements;
 import org.openqa.selenium.WebDriver;
 
-public class FacebookFollowPage extends FacebookBmwUsaPageElements {
+public class FacebookFollowPage extends FacebookBmwUsaElements {
     public FacebookFollowPage(WebDriver driver) {
         super(driver);
     }

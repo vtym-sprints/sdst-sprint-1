@@ -1,9 +1,9 @@
 package pages.FollowingPages;
 
-import elements.FollowingBmwUsa.YouTubeBmwUsaPageElements;
+import elements.FollowingBmwUsa.YouTubeBmwUsaElements;
 import org.openqa.selenium.WebDriver;
 
-public class YouTubeFollowPage extends YouTubeBmwUsaPageElements {
+public class YouTubeFollowPage extends YouTubeBmwUsaElements {
     public YouTubeFollowPage(WebDriver driver) {
         super(driver);
     }
