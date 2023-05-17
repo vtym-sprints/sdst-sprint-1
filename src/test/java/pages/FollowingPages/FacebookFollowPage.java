@@ -7,8 +7,8 @@ public class FacebookFollowPage extends FacebookBmwUsaElements {
     public FacebookFollowPage(WebDriver driver) {
         super(driver);
     }
+
     public  String getNameHeaderFacebook() {
        return waitUntilElementToBeVisibleByXpath(NAME_HEADER_FACEBOOK).getText();
     }
-
 }

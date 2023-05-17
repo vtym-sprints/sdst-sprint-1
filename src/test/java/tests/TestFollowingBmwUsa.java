@@ -12,6 +12,7 @@ import pages.HomePage;
 public class TestFollowingBmwUsa extends AbstractBaseTest {
     @Test
     public void testFollowingBmwUsa() {
+
         HomePage homePage = new HomePage(driver);
 
         homePage.clickAndSwitchToFollowingPage(HomePageElements.BTN_FOLLOWING_FACEBOOK);

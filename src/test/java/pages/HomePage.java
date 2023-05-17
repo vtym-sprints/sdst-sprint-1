@@ -32,5 +32,4 @@ public class HomePage extends HomePageElements {
         driver.close();
         goToNextTab(1);
     }
-
 }
