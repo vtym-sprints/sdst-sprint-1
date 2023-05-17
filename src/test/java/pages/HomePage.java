@@ -1,10 +1,10 @@
 package pages;
 
-import base.AbstractBasePage;
+import elements.HomePageElements;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class HomePage extends AbstractBasePage {
+public class HomePage extends HomePageElements {
 
     public HomePage(WebDriver driver) {
         super(driver);
@@ -21,4 +21,13 @@ public class HomePage extends AbstractBasePage {
         return this;
     }
 
+    public void clickAndSwitchToFollowingPage(String locator) {
+        waitUntilElementToBeClickableByXpath(locator).click();
+        goToNextTab(2);
+    }
+
+    public void closeAndSwitchToHomePage() {
+        driver.close();
+        goToNextTab(1);
+    }
 }
