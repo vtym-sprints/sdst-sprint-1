@@ -11,8 +11,6 @@ public class HomePage extends HomePageElements {
     }
 
     private static final String CARS_IN_AVAILABILITY = "//a[@id='button-f4e1544f40'] ";
-    public String NAME_HEADER = "BMW USA";
-    public String URL_CONTAINS_BWM_USA = "BMWUSA";
 
     public WebElement getCarsInAvailabilityButton() {
         return waitUntilElementToBeClickableByXpath(CARS_IN_AVAILABILITY);

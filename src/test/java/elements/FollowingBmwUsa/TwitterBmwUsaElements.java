@@ -4,6 +4,7 @@ import base.AbstractBasePage;
 import org.openqa.selenium.WebDriver;
 
 public class TwitterBmwUsaElements extends AbstractBasePage {
+
     public TwitterBmwUsaElements(WebDriver driver) {
         super(driver);
     }
