@@ -3,8 +3,15 @@ package base;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+<<<<<<< HEAD
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+=======
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.util.ArrayList;
+>>>>>>> origin/main
 import java.util.List;
 
 import static java.time.Duration.ofMillis;
@@ -26,6 +33,7 @@ abstract public class AbstractBasePage {
 
     protected WebElement waitUntilElementToBeClickableByXpath(String locator) {
         return wait.until(elementToBeClickable(By.xpath(locator)));
+<<<<<<< HEAD
     }
 
     protected WebElement waitUntilPresenceOfElementByXpath(String locator) {
@@ -34,5 +42,25 @@ abstract public class AbstractBasePage {
 
     protected List<WebElement> waitUntilPresenceOfAllElementsByXpath(String locator) {
         return wait.until(presenceOfAllElementsLocatedBy(By.xpath(locator)));
+=======
+    }
+
+    protected WebElement waitUntilPresenceOfElementByXpath(String locator) {
+        return wait.until(presenceOfElementLocated(By.xpath(locator)));
+    }
+
+    protected List<WebElement> waitUntilPresenceOfAllElementsByXpath(String locator) {
+        return wait.until(presenceOfAllElementsLocatedBy(By.xpath(locator)));
+    }
+
+    public void goToNextTab(int tabNumber) {
+        waitUntilNumberOfTabToBe(tabNumber);
+        ArrayList<String> tabs = new ArrayList<>(driver.getWindowHandles());
+        driver.switchTo().window(tabs.get(tabNumber - 1));
+    }
+
+    public void waitUntilNumberOfTabToBe(int tabNumber) {
+        wait.until(ExpectedConditions.numberOfWindowsToBe(tabNumber));
+>>>>>>> origin/main
     }
 }
