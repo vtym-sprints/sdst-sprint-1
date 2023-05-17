@@ -1,29 +1,34 @@
 package tests;
 
 import base.AbstractBaseTest;
+import lombok.SneakyThrows;
 import org.testng.annotations.Test;
 import pages.HomePage;
 import pages.SearchResultPage;
 
-import static elements.HomePageElements.BMW_URL;
-import static org.testng.AssertJUnit.assertTrue;
+import static elements.HomeElements.BMW_URL;
+import static org.assertj.core.api.Assertions.assertThat;
 
 
 public class SearchFieldTest extends AbstractBaseTest {
     public String infoForSearch = "electric";
 
     @Test
+    @SneakyThrows
     public void checkSearchField() {
         openPage(BMW_URL);
         HomePage homePage = new HomePage(driver);
         SearchResultPage searchResultPage = new SearchResultPage(driver);
+
         homePage
-                .closePopup()
+                .dismissPopup()
                 .clickSearchBtn()
                 .enterSearchInfo(infoForSearch);
 
-        searchResultPage.getDetailsFromResearch(infoForSearch);
+        var matchingElementCount = searchResultPage.getDetailsFromResearch(infoForSearch);
 
-        assertTrue(searchResultPage.getDetailsFromResearch(infoForSearch) >= 1);
+        assertThat(matchingElementCount)
+                .as("добавить сообщение!!!")
+                .isGreaterThanOrEqualTo(1);
     }
 }

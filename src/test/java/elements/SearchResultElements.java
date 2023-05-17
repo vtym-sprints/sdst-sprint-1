@@ -7,7 +7,6 @@ public class SearchResultElements extends AbstractBasePage {
     public SearchResultElements(WebDriver driver) {
         super(driver);
     }
-    protected final static String DETAIL_INFO = "//span[@class='st-ui-type-detail']";
 
-    //private static final String CLOSE_COOKIE = "";
+    protected final static String DETAIL_INFO = "//span[@class='st-ui-type-detail']";
 }
