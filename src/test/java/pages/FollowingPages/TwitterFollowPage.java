@@ -4,6 +4,7 @@ import elements.FollowingBmwUsa.TwitterBmwUsaElements;
 import org.openqa.selenium.WebDriver;
 
 public class TwitterFollowPage extends TwitterBmwUsaElements {
+
     public TwitterFollowPage(WebDriver driver) {
         super(driver);
     }

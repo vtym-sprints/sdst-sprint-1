@@ -4,6 +4,7 @@ import elements.FollowingBmwUsa.FacebookBmwUsaElements;
 import org.openqa.selenium.WebDriver;
 
 public class FacebookFollowPage extends FacebookBmwUsaElements {
+
     public FacebookFollowPage(WebDriver driver) {
         super(driver);
     }
