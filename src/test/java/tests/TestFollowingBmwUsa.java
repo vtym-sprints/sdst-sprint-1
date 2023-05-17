@@ -9,6 +9,8 @@ import pages.FollowingPages.TwitterFollowPage;
 import pages.FollowingPages.YouTubeFollowPage;
 import pages.HomePage;
 
+import static elements.HomePageElements.*;
+
 public class TestFollowingBmwUsa extends AbstractBaseTest {
     private static final String NAME_HEADER = "BMW USA";
     private static final String URL_CONTAINS_BWM_USA = "BMWUSA";
@@ -17,41 +19,29 @@ public class TestFollowingBmwUsa extends AbstractBaseTest {
     public void testFollowingBmwUsa() {
         HomePage homePage = new HomePage(driver);
 
-        homePage.clickAndSwitchToFollowingPage(HomePageElements.BTN_FOLLOWING_FACEBOOK);
-        String nameHeaderFacebook =
-                new FacebookFollowPage(driver).getNameHeaderFacebook();
+        homePage.clickAndSwitchToFollowingPage(BTN_FOLLOWING_FACEBOOK);
 
-        Assert.assertEquals(nameHeaderFacebook, TestFollowingBmwUsa.NAME_HEADER);
-        Assert.assertTrue(urlContains(TestFollowingBmwUsa.URL_CONTAINS_BWM_USA));
+        Assert.assertEquals(new FacebookFollowPage(driver).getNameHeaderFacebook(), NAME_HEADER);
+        Assert.assertTrue(urlContains(URL_CONTAINS_BWM_USA));
 
         homePage
-                .closeAndSwitchToHomePage();
+                .closeAndSwitchToHomePage()
+                .clickAndSwitchToFollowingPage(BTN_FOLLOWING_TWITTER);
 
-        homePage.clickAndSwitchToFollowingPage(HomePageElements.BTN_FOLLOWING_TWITTER);
-        String nameHeaderTwitter =
-                new TwitterFollowPage(driver).getNameHeaderTwitter();
-
-        Assert.assertEquals(nameHeaderTwitter, TestFollowingBmwUsa.NAME_HEADER);
-        Assert.assertTrue(urlContains(TestFollowingBmwUsa.URL_CONTAINS_BWM_USA));
+        Assert.assertEquals(new TwitterFollowPage(driver).getNameHeaderTwitter(), NAME_HEADER);
+        Assert.assertTrue(urlContains(URL_CONTAINS_BWM_USA));
 
         homePage
-                .closeAndSwitchToHomePage();
+                .closeAndSwitchToHomePage()
+                .clickAndSwitchToFollowingPage(BTN_FOLLOWING_YOUTUBE);
 
-        homePage.clickAndSwitchToFollowingPage(HomePageElements.BTN_FOLLOWING_YOUTUBE);
-        String nameHeaderYouTube =
-                new YouTubeFollowPage(driver).getNameHeaderYouTube();
-
-        Assert.assertEquals(nameHeaderYouTube, TestFollowingBmwUsa.NAME_HEADER);
-        Assert.assertTrue(urlContains(TestFollowingBmwUsa.URL_CONTAINS_BWM_USA));
+        Assert.assertEquals(new YouTubeFollowPage(driver).getNameHeaderYouTube(), NAME_HEADER);
+        Assert.assertTrue(urlContains(URL_CONTAINS_BWM_USA));
 
         homePage
-                .closeAndSwitchToHomePage();
+                .closeAndSwitchToHomePage()
+                .clickAndSwitchToFollowingPage(BTN_FOLLOWING_INSTAGRAM);
 
-        homePage.clickAndSwitchToFollowingPage(HomePageElements.BTN_FOLLOWING_INSTAGRAM);
-
-        Assert.assertTrue(urlContains(TestFollowingBmwUsa.URL_CONTAINS_BWM_USA.toLowerCase()));
-
-        homePage
-                .closeAndSwitchToHomePage();
+        Assert.assertTrue(urlContains(URL_CONTAINS_BWM_USA.toLowerCase()));
     }
 }
