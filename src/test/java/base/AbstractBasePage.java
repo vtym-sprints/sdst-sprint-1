@@ -13,7 +13,7 @@ import static org.openqa.selenium.support.ui.ExpectedConditions.*;
 abstract public class AbstractBasePage {
     protected WebDriver driver;
     protected WebDriverWait wait;
-    private int BASE_WAIT = 5000;
+    public int BASE_WAIT = 5000;
 
     public AbstractBasePage(WebDriver driver) {
         this.driver = driver;

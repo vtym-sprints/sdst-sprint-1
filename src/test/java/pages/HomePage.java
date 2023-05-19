@@ -1,10 +1,11 @@
 package pages;
 
 import base.AbstractBasePage;
+import elements.HomeElements;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class HomePage extends AbstractBasePage {
+public class HomePage extends HomeElements {
 
     public HomePage(WebDriver driver) {
         super(driver);
@@ -20,5 +21,17 @@ public class HomePage extends AbstractBasePage {
         getCarsInAvailabilityButton().click();
         return this;
     }
+    public BuildYourOwnPage clickBuildYourOwnBtn(){
+        waitUntilElementToBeClickableByXpath(BUILD_YOUR_OWN_FIELD).click();
+        return new BuildYourOwnPage(driver);
+    }
+    public BuildYourOwnPage clickDismissBtn() {
+        waitUntilElementToBeClickableByXpath(DISMISS_COOKIES_BTN).click();
+        return new BuildYourOwnPage(driver);
+    }
 
+    public BuildYourOwnPage modelsFileld() {
+        waitUntilElementToBeClickableByXpath(MODELS_FIELD).click();
+        return new BuildYourOwnPage(driver);
+    }
 }
