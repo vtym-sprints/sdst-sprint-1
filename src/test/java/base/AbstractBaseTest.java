@@ -14,12 +14,13 @@ abstract public class AbstractBaseTest extends Assert {
     public void openWindow() {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
+        driver.get("https://www.bmwusa.com");
     }
 
-//    @AfterMethod
-//    public void closeWindow() {
-//        driver.quit();
-//    }
+    @AfterMethod
+    public void closeWindow() {
+        driver.quit();
+    }
 
     public WebDriver getDriver() {
         return driver;
