@@ -1,6 +1,7 @@
 package tests;
 
 import base.AbstractBaseTest;
+import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.HomePage;
@@ -9,6 +10,7 @@ import pages.VisualizeAccessoriesPage;
 import java.util.Set;
 
 import static org.testng.Assert.assertTrue;
+import static org.testng.AssertJUnit.assertEquals;
 
 public class TestVisualizeAccessories extends AbstractBaseTest {
 
@@ -45,10 +47,21 @@ public class TestVisualizeAccessories extends AbstractBaseTest {
                 .scrollToCategories()
                 .clickCategoriesButton()
                 .clickBmwWheelButton()
-                .closePopUp();
+                .inputTextState()
+                .clickLookUpButton()
+                .clickSetMyDealerButton();
 
-        Assert.assertEquals(driver.getCurrentUrl(), "https://www.shopbmwusa.com/product/3600/BMW-M-PERFORMANCE-ELECTRONIC-STEERING-WHEEL-FOR-SPORT-LINE-EQUIPPED-VEHICLES");
+        assertEquals(driver.getCurrentUrl(), "https://www.shopbmwusa.com/product/3600/BMW-M-PERFORMANCE-ELECTRONIC-STEERING-WHEEL-FOR-SPORT-LINE-EQUIPPED-VEHICLES");
         assertTrue(visualizeAccessoriesPage.textBmwMWheel().isDisplayed());
+
+        visualizeAccessoriesPage
+                .scrollToSelectDealer()
+                .clickChooseOptionsButton()
+                .scrollToAddCartButton()
+                .clickAddToCartButton();
+
+        assertTrue(visualizeAccessoriesPage.getTextBmwWheel().isDisplayed());
+
     }
 }
 

@@ -17,9 +17,9 @@ abstract public class AbstractBaseTest {
     }
 
     @AfterMethod
-    public void closeWindow() {
-        driver.quit();
-    }
+//    public void closeWindow() {
+//        driver.quit();
+//    }
 
     public WebDriver getDriver() {
         return driver;
