@@ -5,13 +5,13 @@ import org.testng.annotations.Test;
 import pages.BuildYourOwnPage;
 import pages.HomePage;
 
+import static org.testng.Assert.assertTrue;
 public class BuildYourOwnTestX5 extends AbstractBaseTest {
 
     @Test
     public void checkCustomizeX5M() {
         BuildYourOwnPage buildYourOwnPage = new BuildYourOwnPage(driver);
         HomePage homePage = new HomePage(driver);
-        openPage("https://www.bmwusa.com/");
 
         homePage.clickDismissBtn();
         homePage.clickBuildYourOwnBtn();

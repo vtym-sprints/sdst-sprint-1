@@ -12,7 +12,6 @@ public class HomePageElements extends AbstractBasePage {
     public static final String BUILD_YOUR_OWN_FIELD = "//a[contains(text(), 'Build Your Own')]";
     public static final String DISMISS_COOKIES_BTN = "//button[contains(text(), 'Dismiss')]";
     public static final String MODELS_FIELD = "//span[contains(text() , 'Models')]";
-
     public HomePageElements(WebDriver driver) {
         super(driver);
     }

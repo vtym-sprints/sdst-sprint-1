@@ -4,7 +4,7 @@ import elements.BuildYourOwnElements;
 import org.openqa.selenium.WebDriver;
 
 public class BuildYourOwnPage extends BuildYourOwnElements {
-    public BuildYourOwnPage(WebDriver driver) {
+    public BuildYourOwnPage (WebDriver driver) {
         super(driver);
     }
 
@@ -83,7 +83,6 @@ public class BuildYourOwnPage extends BuildYourOwnElements {
         return this;
     }
 
-    //------------TEST 2------------
     public BuildYourOwnPage selectX5MSports() {
         waitUntilElementToBeClickableByXpath(X5_M_SPORTS_SELECT).click();
         return this;
@@ -101,8 +100,6 @@ public class BuildYourOwnPage extends BuildYourOwnElements {
     public String checkPrise() {
         return waitUntilElementToBeClickableByXpath(CHECK_PRICE).getText();
     }
-
-    //------------TEST 3----------------
 
     public BuildYourOwnPage selectX4MSports() {
         waitUntilElementToBeClickableByXpath(X4_M_SPORTS_SELECT).click();
@@ -139,8 +136,18 @@ public class BuildYourOwnPage extends BuildYourOwnElements {
         return this;
     }
 
-    public BuildYourOwnPage сhoosingXM() {
+    public BuildYourOwnPage choosingXM() {
         waitUntilElementToBeClickableByXpath(XM_CHOOSING).click();
+        return this;
+    }
+
+    public BuildYourOwnPage xmBuildOwn() {
+        waitUntilElementToBeClickableByXpath(XM_BUILD_OWN).click();
+        return this;
+    }
+
+    public BuildYourOwnPage xmWhiteColor() {
+        waitUntilElementToBeClickableByXpath(XM_WHITE_COLOR).click();
         return this;
     }
 }
