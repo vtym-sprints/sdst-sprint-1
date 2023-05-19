@@ -1,7 +1,6 @@
 package tests;
 
 import base.AbstractBaseTest;
-import elements.HomePageElements;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.CartPage;
