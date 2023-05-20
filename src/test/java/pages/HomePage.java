@@ -25,9 +25,9 @@ public class HomePage extends HomePageElements {
         return new BuildYourOwnPage(driver);
     }
 
-    public BuildYourOwnPage modelsField() {
+    public HomePage clickModelsField() {
         waitUntilElementToBeClickableByXpath(MODELS_FIELD).click();
-        return new BuildYourOwnPage(driver);
+        return this;
     }
 
     public HomePage closeAndSwitchToHomePage() {

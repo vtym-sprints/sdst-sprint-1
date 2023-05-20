@@ -79,7 +79,7 @@ public class BuildYourOwnPage extends BuildYourOwnElements {
     }
 
     public BuildYourOwnPage closeModalWindow() {
-        waitUntilElementToBeClickableByXpath(MODAL_WINDOW_CLOSE_BTN).click();
+        waitUntilElementToBeVisibleByXpath(MODAL_WINDOW_CLOSE_BTN).click();
         return this;
     }
 
@@ -141,13 +141,23 @@ public class BuildYourOwnPage extends BuildYourOwnElements {
         return this;
     }
 
-    public BuildYourOwnPage xmBuildOwn() {
+    public BuildYourOwnPage pressXMBuildOwn() {
         waitUntilElementToBeClickableByXpath(XM_BUILD_OWN).click();
         return this;
     }
 
-    public BuildYourOwnPage xmWhiteColor() {
+    public BuildYourOwnPage selectXMWhiteColor() {
         waitUntilElementToBeClickableByXpath(XM_WHITE_COLOR).click();
+        return this;
+    }
+
+    public BuildYourOwnPage selectXMOrangeLeather() {
+        waitUntilElementToBeClickableByXpath(XM_ORANGE_LEATHER).click();
+        return this;
+    }
+
+    public BuildYourOwnPage selectXMBuild() {
+        waitUntilElementToBeClickableByXpath(XM_SELECT_BUILD).click();
         return this;
     }
 }

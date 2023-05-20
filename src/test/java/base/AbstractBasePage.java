@@ -13,6 +13,7 @@ import static java.time.Duration.ofMillis;
 import static org.openqa.selenium.support.ui.ExpectedConditions.*;
 
 abstract public class AbstractBasePage {
+
     protected WebDriver driver;
     protected WebDriverWait wait;
     public int BASE_WAIT = 5000;

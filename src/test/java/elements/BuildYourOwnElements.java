@@ -37,7 +37,9 @@ public class BuildYourOwnElements extends AbstractBasePage {
     public static final String X4M_PERFORMANCE_BTN = "//div[contains(text(), 'M Performance') and @class='name byo-core-type label-2 theme-core']";
     public static final String X4_SMOKE_GREY_LEATHER = "//div[contains(text(), 'Smoke Grey')]";
     public static final String XM_CHOOSING = "//div[text()='XM']";
-    public static final String XM_BUILD_OWN = "//a[contains(text(), 'Build Your Own')]";
+    public static final String XM_BUILD_OWN = "//a[@href='/vehicles/m-models/xm-plug-in-hybrid/build-your-own.html']";
     public static final String X4_M_SELECT = "//a[@title='2023 BMW X4 M']";
-    public static final String XM_WHITE_COLOR = "";
+    public static final String XM_WHITE_COLOR = "//div[contains(text(), 'White')]";
+    public static final String XM_ORANGE_LEATHER = "//div[contains(text(), 'Orange')]";
+    public static final String XM_SELECT_BUILD = "//a[@href='/build-your-own.html#/studio/23SR']";
 }
