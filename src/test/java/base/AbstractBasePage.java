@@ -10,12 +10,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static java.time.Duration.ofMillis;
+import static org.openqa.selenium.By.xpath;
 import static org.openqa.selenium.support.ui.ExpectedConditions.*;
 
 abstract public class AbstractBasePage {
     protected WebDriver driver;
     protected WebDriverWait wait;
-    private int BASE_WAIT = 5000;
+    private int BASE_WAIT = 7000;
 
     public AbstractBasePage(WebDriver driver) {
         this.driver = driver;

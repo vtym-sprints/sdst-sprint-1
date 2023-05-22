@@ -20,4 +20,15 @@ public class CommonActions {
         Actions actions = new Actions(driver);
         actions.moveToElement(element).build().perform();
     }
+
+    public static void jsClick(WebElement element, WebDriver driver) {
+        JavascriptExecutor executor = (JavascriptExecutor)driver;
+        executor.executeScript("arguments[0].click();", element);
+    }
+
+    public static String replacePrice(WebElement element){
+        String text = element.getText().replace("$", "").replace(",", "");
+        return text;
+    }
+
 }
