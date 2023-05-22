@@ -1,13 +1,13 @@
 package pages;
 
-import elements.HomeElements;
+import elements.HomePageElements;
 import elements.SearchResultElements;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
 import static base.CommonActions.jsClick;
 
-public class HomePage extends HomeElements {
+public class HomePage extends HomePageElements {
 
     public HomePage(WebDriver driver) {
         super(driver);
@@ -28,5 +28,17 @@ public class HomePage extends HomeElements {
         searchField.sendKeys(info);
         searchField.sendKeys(Keys.ENTER);
         return new SearchResultPage(driver);
+    }
+
+    public HomePage clickAndSwitchToFollowingPage(String locator) {
+        waitUntilElementToBeClickableByXpath(locator).click();
+        goToNextTab(2);
+        return this;
+    }
+
+    public HomePage closeAndSwitchToHomePage() {
+        driver.close();
+        goToNextTab(1);
+        return this;
     }
 }

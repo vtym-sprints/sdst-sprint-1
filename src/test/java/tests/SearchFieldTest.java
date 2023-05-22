@@ -10,6 +10,7 @@ import static elements.HomeElements.BMW_URL;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class SearchFieldTest extends AbstractBaseTest {
+
     private String infoForSearch = "electric";
 
     @Test
