@@ -7,7 +7,7 @@ import pages.HomePage;
 
 import static org.testng.Assert.assertTrue;
 
-public class checkModelsField extends AbstractBaseTest {
+public class CheckModelsField extends AbstractBaseTest {
 
     @Test
     public void checkModelsField() {
