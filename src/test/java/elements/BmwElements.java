@@ -4,16 +4,17 @@ import base.AbstractBasePage;
 import org.openqa.selenium.WebDriver;
 
 public class BmwElements extends AbstractBasePage {
+
     public BmwElements(WebDriver driver) {
         super(driver);
     }
+
     protected final static String SELECT_A_SERIES_BUTTON = "//h1[@class='primary-header WheelsFMAHeader'][contains(text(),'SPRING INTO GEAR')]";
     protected final static String BMW_M_BUTTON = "//h1[@class='primary-header WheelsFMAHeader'][contains(text(),'SPRING INTO GEAR')]";
     protected final static String SCROLL_M8_BUTTON = "//h1[@class='primary-header WheelsFMAHeader'][contains(text(),'SPRING INTO GEAR')]";
     protected final static String SCROLL_SELECT_DEALER = "//a[@data-ajax-complete='clearRightMenu']";
     protected final static String BMW_M8_COUPE_BUTTON = "//h1[@class='primary-header WheelsFMAHeader'][contains(text(),'SPRING INTO GEAR')]";
     protected final static String CUSTOMIZE_BUTTON = "//h1[@class='primary-header WheelsFMAHeader'][contains(text(),'SPRING INTO GEAR')]";
-
     protected final static String SHOPPING_BUTTON = "//button[@name='Shopping Flyout']";
     protected final static String SHOP_BMW_PARTS_BUTTON = "//a[@analytics-event='topnav-shopping-tools.shop-shop-bmwusa.shop-bmw-parts-accessories.link']";
     protected final static String SPRING_INTO_GEAR = "//h1[@class='primary-header WheelsFMAHeader'][contains(text(),'SPRING INTO GEAR')]";
@@ -33,8 +34,4 @@ public class BmwElements extends AbstractBasePage {
     protected final static String SCROLL_ADD_TO_CART_BUTTON = "//span[@id='SummarySubTotal']";
     protected final static String ADD_TO_CART_BUTTON = "//button[@id='btnAddToCart']";
     protected final static String TEXT_BMW_WHEEL = "//h3[@id='hFlyoutName_BMW©Electronic©Performance©Steering©Wheel'][contains(text(),'BMW Electronic Performance Steering Wheel ')]";
-
-
-
-
 }

@@ -10,11 +10,11 @@ import static base.CommonActions.scrollToElement;
 public class TestConfiguratorBmwM8 extends AbstractBaseTest {
 
     @Test
-    public void test() {
-        openPage("https://www.bmwusa.com/");
+    public void testConfiguratorBmwM8() {
 
         HomePage homePage = new HomePage(driver);
         BmwM8Page bmwM8Page = new BmwM8Page(driver);
+
         homePage
                 .dismissPopup()
                 .clickBuildYourOwnButton();

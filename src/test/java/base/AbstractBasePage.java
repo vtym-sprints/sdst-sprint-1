@@ -5,9 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +16,7 @@ import static org.openqa.selenium.support.ui.ExpectedConditions.*;
 abstract public class AbstractBasePage {
     protected WebDriver driver;
     protected WebDriverWait wait;
-    private int BASE_WAIT = 7000;
+    private int BASE_WAIT = 15000;
 
     public AbstractBasePage(WebDriver driver) {
         this.driver = driver;
@@ -31,7 +29,6 @@ abstract public class AbstractBasePage {
 
     protected WebElement waitUntilElementToBeClickableByXpath(String locator) {
         return wait.until(elementToBeClickable(By.xpath(locator)));
-
     }
 
     protected WebElement waitUntilPresenceOfElementByXpath(String locator) {
@@ -41,7 +38,6 @@ abstract public class AbstractBasePage {
     protected List<WebElement> waitUntilPresenceOfAllElementsByXpath(String locator) {
         return wait.until(presenceOfAllElementsLocatedBy(By.xpath(locator)));
     }
-
 
     public void goToNextTab(int tabNumber) {
         waitUntilNumberOfTabToBe(tabNumber);

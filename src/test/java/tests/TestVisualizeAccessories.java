@@ -16,14 +16,15 @@ public class TestVisualizeAccessories extends AbstractBaseTest {
 
     @Test
     public void test() {
-        openPage("https://www.bmwusa.com/");
-
         HomePage homePage = new HomePage(driver);
         VisualizeAccessoriesPage visualizeAccessoriesPage = new VisualizeAccessoriesPage(driver);
+
         visualizeAccessoriesPage
                 .clickShoppingButton();
+
         homePage
                 .dismissPopup();
+
         visualizeAccessoriesPage
                 .clickShopBMWPartsButton();
 
@@ -64,4 +65,3 @@ public class TestVisualizeAccessories extends AbstractBaseTest {
 
     }
 }
-
