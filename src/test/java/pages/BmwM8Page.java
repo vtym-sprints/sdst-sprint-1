@@ -1,17 +1,18 @@
 package pages;
 
-import base.AbstractBasePage;
 import elements.BmwElements;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+
 import static base.CommonActions.scrollToElement;
 
 public class BmwM8Page extends BmwElements {
+
     public BmwM8Page(WebDriver driver) {
         super(driver);
     }
-    public WebElement getSelectASeriesButton() {
 
+    public WebElement getSelectASeriesButton() {
         return waitUntilElementToBeClickableByXpath(SELECT_A_SERIES_BUTTON);
     }
 
@@ -19,8 +20,8 @@ public class BmwM8Page extends BmwElements {
         getSelectASeriesButton().click();
         return this;
     }
-    public WebElement getBmwMButton() {
 
+    public WebElement getBmwMButton() {
         return waitUntilElementToBeClickableByXpath(BMW_M_BUTTON);
     }
 
@@ -28,13 +29,13 @@ public class BmwM8Page extends BmwElements {
         getBmwMButton().click();
         return this;
     }
+
     public BmwM8Page scrollBmwM8Select() {
         scrollToElement(waitUntilElementToBeVisibleByXpath(SCROLL_M8_BUTTON), driver);
         return this;
     }
 
     public WebElement getBmwM9CoupeButton() {
-
         return waitUntilElementToBeClickableByXpath(BMW_M8_COUPE_BUTTON);
     }
 
