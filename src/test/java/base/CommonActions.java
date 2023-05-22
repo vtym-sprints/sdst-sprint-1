@@ -12,6 +12,11 @@ public class CommonActions {
         js2.executeScript("arguments[0].scrollIntoView(true);", element);
     }
 
+    public static void jsClick(WebElement element, WebDriver driver) {
+        JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+        jsExecutor.executeScript("arguments[0].click();", element);
+    }
+
     public static void back(WebDriver driver) {
         driver.navigate().back();
     }
