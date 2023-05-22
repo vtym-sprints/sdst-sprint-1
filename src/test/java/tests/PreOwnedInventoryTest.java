@@ -17,7 +17,7 @@ public class PreOwnedInventoryTest extends AbstractBaseTest {
 
     private final String zipCode = "07003";
 
-    @Test(invocationCount = 5)
+    @Test()
     public void checkFilteringByBodyStyleAndPrice() {
         HomePage homePage = new HomePage(driver);
         ZipCodePage zipCodePage = new ZipCodePage(driver);

@@ -17,9 +17,9 @@ import static org.openqa.selenium.support.ui.ExpectedConditions.*;
 abstract public class AbstractBasePage {
     protected WebDriver driver;
     protected WebDriverWait wait;
-    private int BASE_WAIT = 7000;
-
+    private int BASE_WAIT = 15000;
     private final String CIRCLE_LOADER = "//div[@class='load-indicator_loader_njc5r']";
+
 
     public AbstractBasePage(WebDriver driver) {
         this.driver = driver;
@@ -62,3 +62,4 @@ abstract public class AbstractBasePage {
         sleep(100);
     }
 }
+

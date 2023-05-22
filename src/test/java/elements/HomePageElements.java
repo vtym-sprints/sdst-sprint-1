@@ -19,4 +19,6 @@ public class HomePageElements extends AbstractBasePage {
             PRE_OWNED_INVENTORY = "//a[@analytics-event='footer-shopping-tools.cpo.shop-pre-owned.button']",
             FOOTER_MENU = "//div[@class='accordion-base__trigger label-1--bold']",
             GLOBAL_POPUP_DISMISS_BTN_SEL = "//button[contains(text(), 'Dismiss')]";
+
+    public final static String BUILD_YOUR_OWN_BUTTON = "//a[@analytics-event='topnav.byo.byo.link']";
 }

@@ -1,7 +1,8 @@
 package pages;
 
-import elements.HomePageElements;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import elements.HomePageElements;
 
 import static base.CommonActions.jsClick;
 import static base.CommonActions.scrollToElement;
@@ -11,6 +12,22 @@ public class HomePage extends HomePageElements {
 
     public HomePage(WebDriver driver) {
         super(driver);
+    }
+
+    private static final String CARS_IN_AVAILABILITY = "//a[@id='button-f4e1544f40'] ";
+
+    public WebElement getCarsInAvailabilityButton() {
+        return waitUntilElementToBeClickableByXpath(CARS_IN_AVAILABILITY);
+    }
+
+    public HomePage dismissPopup() {
+        jsClick(waitUntilPresenceOfElementByXpath(GLOBAL_POPUP_DISMISS_BTN_SEL), driver);
+        return this;
+    }
+
+    public HomePage clickCarsInAvailability() {
+        getCarsInAvailabilityButton().click();
+        return this;
     }
 
     public HomePage clickAndSwitchToFollowingPage(String locator) {
@@ -25,7 +42,6 @@ public class HomePage extends HomePageElements {
         return this;
     }
 
-
     public ShopPreOwnedInventoryPage clickPreOwnedInventory(){
         scrollToElement(waitUntilElementToBeClickableByXpath(FOOTER_MENU),driver);
         waitUntilElementToBeClickableByXpath(PRE_OWNED_INVENTORY).click();
@@ -33,9 +49,8 @@ public class HomePage extends HomePageElements {
         return new ShopPreOwnedInventoryPage(driver);
     }
 
-    public HomePage dismissPopup() {
-        jsClick(waitUntilPresenceOfElementByXpath(GLOBAL_POPUP_DISMISS_BTN_SEL), driver);
+    public HomePage clickBuildYourOwnButton() {
+        waitUntilElementToBeClickableByXpath(BUILD_YOUR_OWN_BUTTON).click();
         return this;
     }
-
 }
