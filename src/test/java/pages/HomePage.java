@@ -1,5 +1,5 @@
 package pages;
-import base.AbstractBasePage;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import elements.HomePageElements;
@@ -20,22 +20,24 @@ public class HomePage extends HomePageElements {
 
     public HomePage dismissPopup() {
         jsClick(waitUntilPresenceOfElementByXpath(GLOBAL_POPUP_DISMISS_BTN_SEL), driver);
-
         return this;
     }
+
     public HomePage clickCarsInAvailability() {
         getCarsInAvailabilityButton().click();
         return this;
     }
 
-    public void clickAndSwitchToFollowingPage(String locator) {
+    public HomePage clickAndSwitchToFollowingPage(String locator) {
         waitUntilElementToBeClickableByXpath(locator).click();
         goToNextTab(2);
+        return this;
     }
 
-    public void closeAndSwitchToHomePage() {
+    public HomePage closeAndSwitchToHomePage() {
         driver.close();
         goToNextTab(1);
+        return this;
     }
 
     public HomePage clickBuildYourOwnButton() {
