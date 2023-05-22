@@ -9,14 +9,12 @@ import pages.SearchResultPage;
 import static elements.HomeElements.BMW_URL;
 import static org.assertj.core.api.Assertions.assertThat;
 
-
 public class SearchFieldTest extends AbstractBaseTest {
-    public String infoForSearch = "electric";
+    private String infoForSearch = "electric";
 
     @Test
     @SneakyThrows
     public void checkSearchField() {
-        openPage(BMW_URL);
         HomePage homePage = new HomePage(driver);
         SearchResultPage searchResultPage = new SearchResultPage(driver);
 
@@ -28,7 +26,7 @@ public class SearchFieldTest extends AbstractBaseTest {
         var matchingElementCount = searchResultPage.getDetailsFromResearch(infoForSearch);
 
         assertThat(matchingElementCount)
-                .as("добавить сообщение!!!")
+                .as("Search doesn't work correct")
                 .isGreaterThanOrEqualTo(1);
     }
 }

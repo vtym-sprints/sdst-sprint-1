@@ -10,6 +10,7 @@ import static org.openqa.selenium.support.ui.ExpectedConditions.presenceOfAllEle
 import static org.openqa.selenium.support.ui.ExpectedConditions.refreshed;
 
 public class SearchResultPage extends SearchResultElements {
+
     public SearchResultPage(WebDriver driver) {
         super(driver);
     }

@@ -15,13 +15,11 @@ public class HomePage extends HomeElements {
 
     public HomePage dismissPopup() {
         jsClick(waitUntilPresenceOfElementByXpath(GLOBAL_POPUP_DISMISS_BTN_SEL), driver);
-
         return this;
     }
 
     public HomePage clickSearchBtn() {
         waitUntilPresenceOfElementByXpath(SEARCH_BTN).click();
-
         return this;
     }
 
@@ -29,7 +27,6 @@ public class HomePage extends HomeElements {
         var searchField = waitUntilElementToBeVisibleByXpath(SEARCH_FIELD);
         searchField.sendKeys(info);
         searchField.sendKeys(Keys.ENTER);
-
         return new SearchResultPage(driver);
     }
 }
