@@ -3,7 +3,6 @@ package pages;
 import elements.HomePageElements;
 import org.openqa.selenium.WebDriver;
 
-
 import static base.CommonActions.jsClick;
 import static base.CommonActions.scrollToElement;
 

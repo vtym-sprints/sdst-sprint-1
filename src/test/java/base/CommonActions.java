@@ -22,13 +22,11 @@ public class CommonActions {
     }
 
     public static void jsClick(WebElement element, WebDriver driver) {
-        JavascriptExecutor executor = (JavascriptExecutor)driver;
+        JavascriptExecutor executor = (JavascriptExecutor) driver;
         executor.executeScript("arguments[0].click();", element);
     }
 
-    public static String replacePrice(WebElement element){
-        String text = element.getText().replace("$", "").replace(",", "");
-        return text;
+    public static String replacePrice(WebElement element) {
+        return element.getText().replaceAll("[^0-9]", "");
     }
-
 }

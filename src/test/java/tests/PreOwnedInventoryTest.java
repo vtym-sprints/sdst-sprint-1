@@ -3,7 +3,6 @@ package tests;
 import base.AbstractBaseTest;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
-import org.testng.asserts.SoftAssert;
 import pages.HomePage;
 import pages.ShopPreOwnedInventoryPage;
 import pages.ZipCodePage;
@@ -11,13 +10,14 @@ import pages.ZipCodePage;
 import java.util.List;
 
 import static base.CommonActions.replacePrice;
-import static org.testng.Assert.assertTrue;
+import static java.lang.Integer.parseInt;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class PreOwnedInventoryTest extends AbstractBaseTest {
 
     private final String zipCode = "07003";
 
-    @Test
+    @Test(invocationCount = 5)
     public void checkFilteringByBodyStyleAndPrice() {
         HomePage homePage = new HomePage(driver);
         ZipCodePage zipCodePage = new ZipCodePage(driver);
@@ -28,42 +28,46 @@ public class PreOwnedInventoryTest extends AbstractBaseTest {
                 .clickPreOwnedInventory();
 
         zipCodePage.choseZipCode(zipCode);
-
         shopPreOwnedInventoryPage.chosePreOwned();
 
-        assertTrue(shopPreOwnedInventoryPage.getFilterText().contains("Pre-Owned"));
+        assertThat(shopPreOwnedInventoryPage.getFilterText())
+                .as("Pre-Owned doesn't selected")
+                .contains("Pre-Owned");
 
-        shopPreOwnedInventoryPage.clickBodyStyleFilter();
-        WebElement bodyStyle = shopPreOwnedInventoryPage.choseRandomBodyStyle();
+        WebElement bodyStyle = shopPreOwnedInventoryPage
+                .clickBodyStyleFilter()
+                .choseRandomBodyStyle();
         shopPreOwnedInventoryPage.clickBodyStyle(bodyStyle);
-        String nameOfBodyStyle = shopPreOwnedInventoryPage.getNameBodyStyle(bodyStyle).trim();
-        System.out.println(shopPreOwnedInventoryPage.getFilterText());
-        System.out.println(nameOfBodyStyle);
 
+        String nameOfBodyStyle = shopPreOwnedInventoryPage.getNameBodyStyle(bodyStyle);
         List<String> filters = shopPreOwnedInventoryPage.getFilterText();
-        boolean match = filters.stream()
-                .anyMatch(filter -> filters.contains(nameOfBodyStyle));
-        assertTrue(match);
+
+        assertThat(filters)
+                .as("Filter of body style " + nameOfBodyStyle + " doesn't selected.")
+                .contains(nameOfBodyStyle);
 
         shopPreOwnedInventoryPage.scrollToPriceFilter();
         shopPreOwnedInventoryPage
                 .clickPriceFilter();
         shopPreOwnedInventoryPage
-                .chooseRandomMinPrice();
+                .chooseRandomMinPrice()
+                .isTillLoader();
+        System.out.println(shopPreOwnedInventoryPage.getChooseMinPrice().getText());
+
         shopPreOwnedInventoryPage
-                .chooseRandomMaxPrice();
-        int minPrice = Integer.parseInt(replacePrice(shopPreOwnedInventoryPage.getChooseMinPrice()));
-        int maxPrice = Integer.parseInt(replacePrice(shopPreOwnedInventoryPage.getChooseMaxPrice()));
+                .chooseRandomMaxPrice()
+                .isTillLoader();
+        System.out.println(shopPreOwnedInventoryPage.getChooseMaxPrice().getText());
 
-        System.out.println(minPrice);
-        System.out.println(maxPrice);
-        var soft = new SoftAssert();
+        int minPrice = parseInt(replacePrice(shopPreOwnedInventoryPage.getChooseMinPrice()));
+        int maxPrice = parseInt(replacePrice(shopPreOwnedInventoryPage.getChooseMaxPrice()));
+
         List<Integer> prices = shopPreOwnedInventoryPage.getProductsPrices();
-        for (int price : prices) {
-            soft.assertTrue(price >= minPrice, "Doesn't >=" + minPrice);
-            soft.assertTrue(price <= maxPrice, "Doesn't <=" + maxPrice);
-        }
-
-        soft.assertAll();
+        prices
+                .forEach(price -> {
+                    assertThat(price)
+                            .as("Price should be in the range from " + minPrice + " to " + maxPrice)
+                            .isBetween(minPrice, maxPrice);
+                });
     }
 }
