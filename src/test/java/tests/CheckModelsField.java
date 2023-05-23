@@ -16,7 +16,7 @@ public class CheckModelsField extends AbstractBaseTest {
         BuildYourOwnPage buildYourOwnPage = new BuildYourOwnPage(driver);
 
         homePage.clickDismissBtn();
-        homePage.clickModelsField();
+        homePage.clickModelsBtn();
 
         buildYourOwnPage
                 .choosingXM();
