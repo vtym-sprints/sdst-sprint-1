@@ -14,6 +14,6 @@ public class BuildYourOwnElements extends AbstractBasePage {
     public final static String TOTAL_PRICE_X7 = "//div[@class='total-price']";
     public final static String M_SPORT_LOOK = "//div[@longdescription='Performance features inspired by BMW Motorsport.']";
     public final static String NEXT_COLOR_BTN = "//a[@class='button-next byo-core-type label-1 theme-core']";
-
+    public final static String TANZANITE_BLUE_II_METALIC_COLOR = "//div[contains(text(),'Tanzanite Blue II Metallic')]";
 
 }
