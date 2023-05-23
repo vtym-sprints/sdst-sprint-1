@@ -21,7 +21,6 @@ public class TestFindCars extends AbstractBaseTest {
 
         findCarsPage.inputZipCode()
                 .clickShopNewButton()
-          //      .clickSelectButton()
                 .inputZipCodeNewPage()
                 .clickShopNow()
                 .clickSeriesButton()
