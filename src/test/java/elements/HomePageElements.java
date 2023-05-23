@@ -19,5 +19,5 @@ public class HomePageElements extends AbstractBasePage {
     public static final String FOOTER_MENU = "//div[@class='accordion-base__trigger label-1--bold']";
     public static final String GLOBAL_POPUP_DISMISS_BTN_SEL = "//button[contains(text(), 'Dismiss')]";
 
-    public final static String BUILD_YOUR_OWN_BUTTON = "//a[@analytics-event='topnav.byo.byo.link']";
+    public static final String BUILD_YOUR_OWN_BUTTON = "//a[@analytics-event='topnav.byo.byo.link']";
 }
