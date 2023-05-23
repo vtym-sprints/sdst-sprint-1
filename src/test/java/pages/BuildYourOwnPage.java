@@ -4,7 +4,7 @@ import elements.BuildYourOwnElements;
 import org.openqa.selenium.WebDriver;
 
 public class BuildYourOwnPage extends BuildYourOwnElements {
-    public BuildYourOwnPage (WebDriver driver) {
+    public BuildYourOwnPage(WebDriver driver) {
         super(driver);
     }
 
@@ -73,9 +73,8 @@ public class BuildYourOwnPage extends BuildYourOwnElements {
         return this;
     }
 
-    public BuildYourOwnPage checkTotalPrice() {
-        waitUntilElementToBeClickableByXpath(TOTAL_PRICE_CHECK).click();
-        return this;
+    public String getTotalPrice() {
+        return waitUntilElementToBeClickableByXpath(TOTAL_PRICE).getText();
     }
 
     public BuildYourOwnPage closeModalWindow() {
@@ -93,11 +92,11 @@ public class BuildYourOwnPage extends BuildYourOwnElements {
         return this;
     }
 
-    public String checkName() {
+    public String getName() {
         return waitUntilElementToBeClickableByXpath(CHECK_NAME).getText();
     }
 
-    public String checkPrise() {
+    public String getPrice() {
         return waitUntilElementToBeClickableByXpath(CHECK_PRICE).getText();
     }
 

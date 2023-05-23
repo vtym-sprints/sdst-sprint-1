@@ -1,18 +1,18 @@
 package pages;
 
+import elements.HomePageElements;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import elements.HomePageElements;
 
 import static base.CommonActions.jsClick;
 
 public class HomePage extends HomePageElements {
 
+    private static final String CARS_IN_AVAILABILITY = "//a[@id='button-f4e1544f40'] ";
+
     public HomePage(WebDriver driver) {
         super(driver);
     }
-
-    private static final String CARS_IN_AVAILABILITY = "//a[@id='button-f4e1544f40'] ";
 
     public WebElement getCarsInAvailabilityButton() {
         return waitUntilElementToBeClickableByXpath(CARS_IN_AVAILABILITY);

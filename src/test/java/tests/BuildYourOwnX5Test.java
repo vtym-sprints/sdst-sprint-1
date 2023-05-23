@@ -6,15 +6,17 @@ import pages.BuildYourOwnPage;
 import pages.HomePage;
 
 import static org.testng.Assert.assertTrue;
-public class BuildYourOwnTestX5 extends AbstractBaseTest {
+
+public class BuildYourOwnX5Test extends AbstractBaseTest {
 
     @Test
     public void checkCustomizeX5M() {
+
         BuildYourOwnPage buildYourOwnPage = new BuildYourOwnPage(driver);
         HomePage homePage = new HomePage(driver);
 
-        homePage.clickDismissBtn();
-        homePage.clickBuildYourOwnBtn();
+        homePage.dismissPopup()
+                .clickBuildYourOwnBtn();
 
         buildYourOwnPage
                 .selectX5MSports()
@@ -27,7 +29,7 @@ public class BuildYourOwnTestX5 extends AbstractBaseTest {
                 .pressNextSummaryBtn()
                 .closeModalWindow();
 
-        assertTrue(buildYourOwnPage.checkName().contains("Competition"));
-        assertTrue(buildYourOwnPage.checkPrise().contains("122,300"));
+        assertTrue(buildYourOwnPage.getName().contains("Competition"));
+        assertTrue(buildYourOwnPage.getPrice().contains("122,300"));
     }
 }

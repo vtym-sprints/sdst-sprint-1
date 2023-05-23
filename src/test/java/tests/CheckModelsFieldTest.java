@@ -7,7 +7,7 @@ import pages.HomePage;
 
 import static org.testng.Assert.assertTrue;
 
-public class CheckModelsField extends AbstractBaseTest {
+public class CheckModelsFieldTest extends AbstractBaseTest {
 
     @Test
     public void checkModelsField() {
@@ -15,15 +15,13 @@ public class CheckModelsField extends AbstractBaseTest {
         HomePage homePage = new HomePage(driver);
         BuildYourOwnPage buildYourOwnPage = new BuildYourOwnPage(driver);
 
-        homePage.clickDismissBtn();
-        homePage.clickModelsBtn();
+        homePage.dismissPopup()
+                .clickModelsBtn();
 
         buildYourOwnPage
-                .choosingXM();
-        buildYourOwnPage
+                .choosingXM()
                 .pressXMBuildOwn()
-                .selectXMBuild();
-        buildYourOwnPage
+                .selectXMBuild()
                 .closeModalWindow()
                 .pressNextWheelsBtn()
                 .pressNextUpholstery()
@@ -31,11 +29,10 @@ public class CheckModelsField extends AbstractBaseTest {
                 .pressNextTrimBtn()
                 .pressNextOptionsBtn()
                 .pressNextAccessories()
-                .pressNextSummaryBtn();
+                .pressNextSummaryBtn()
+                .closeModalWindow();
 
-        buildYourOwnPage.closeModalWindow();
-
-        assertTrue(buildYourOwnPage.checkName().contains("BMW XM"));
-        assertTrue(buildYourOwnPage.checkPrise().contains("160,500"));
+        assertTrue(buildYourOwnPage.getName().contains("BMW XM"));
+        assertTrue(buildYourOwnPage.getPrice().contains("160,500"));
     }
 }

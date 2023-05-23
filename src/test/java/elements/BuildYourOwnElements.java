@@ -2,10 +2,10 @@ package elements;
 
 import base.AbstractBasePage;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
 public class BuildYourOwnElements extends AbstractBasePage {
-    public BuildYourOwnElements (WebDriver driver) {
+
+    public BuildYourOwnElements(WebDriver driver) {
         super(driver);
     }
 
@@ -21,7 +21,7 @@ public class BuildYourOwnElements extends AbstractBasePage {
     public static final String TRIM_GLOSS_WOOD = "//div[contains(text(), 'Fineline Black Wood')]";
     public static final String NEXT_OPTIONS_BTN = "//a[contains(text(), 'Next / Options')]";
     public static final String NEXT_SUMMARY_BTN = "//a[contains(text(), 'Next / Summary')]";
-    public static final String TOTAL_PRICE_CHECK = "//div[contains(text(), 'Total Price (MSRP)')]";
+    public static final String TOTAL_PRICE = "//div[contains(text(), 'Total Price (MSRP)')]";
     public static final String MODAL_WINDOW_CLOSE_BTN = "//button[@aria-label='Close Zipcode Modal']";
     public static final String X5_M_SPORTS_SELECT = "//a[contains(@aria-label, 'Select X5 M Sports')]";
     public static final String X5_M_COMPETITION = "//div[contains(text(),'122,300')]/following-sibling::a";
