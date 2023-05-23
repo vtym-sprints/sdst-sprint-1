@@ -1,8 +1,6 @@
 package tests;
 
 import base.AbstractBaseTest;
-import org.openqa.selenium.By;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.HomePage;
 import pages.VisualizeAccessoriesPage;
@@ -13,19 +11,14 @@ import static org.testng.Assert.assertTrue;
 import static org.testng.AssertJUnit.assertEquals;
 
 public class TestVisualizeAccessories extends AbstractBaseTest {
-
     @Test
-    public void test() {
-        openPage("https://www.bmwusa.com/");
-
+    public void testVisualizeAccessories() {
         HomePage homePage = new HomePage(driver);
         VisualizeAccessoriesPage visualizeAccessoriesPage = new VisualizeAccessoriesPage(driver);
-        visualizeAccessoriesPage
-                .clickShoppingButton();
-        homePage
-                .dismissPopup();
-        visualizeAccessoriesPage
-                .clickShopBMWPartsButton();
+
+        visualizeAccessoriesPage.clickShoppingButton();
+        homePage.dismissPopup();
+        visualizeAccessoriesPage.clickShopBMWPartsButton();
 
         Set<String> windowHandles = driver.getWindowHandles();
         String currentWindowHandle = driver.getWindowHandle();
@@ -36,7 +29,7 @@ public class TestVisualizeAccessories extends AbstractBaseTest {
             }
         }
 
-        Assert.assertEquals(driver.getCurrentUrl(), "https://www.shopbmwusa.com/");
+        assertEquals(driver.getCurrentUrl(), "https://www.shopbmwusa.com/");
         assertTrue(visualizeAccessoriesPage.springIntoGearText().isDisplayed());
 
         visualizeAccessoriesPage
@@ -61,7 +54,5 @@ public class TestVisualizeAccessories extends AbstractBaseTest {
                 .clickAddToCartButton();
 
         assertTrue(visualizeAccessoriesPage.getTextBmwWheel().isDisplayed());
-
     }
 }
-

@@ -1,30 +1,24 @@
 package tests;
 
 import base.AbstractBaseTest;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.FollowingPages.UserLoginPage;
 import pages.HomePage;
-
 import java.util.Set;
 
-import static org.testng.Assert.assertTrue;
+import static org.testng.Assert.*;
 
 public class TestUserLogin extends AbstractBaseTest {
     @Test
-    public void test() {
-        openPage("https://www.bmwusa.com/");
-
+    public void testUserLogin() {
         HomePage homePage = new HomePage(driver);
         UserLoginPage userLoginPage = new UserLoginPage(driver);
 
         homePage.dismissPopup();
-
         userLoginPage
-
                 .clickMyBmwButton()
                 .inputEmail()
-                .inputPasswoed()
+                .inputPassword()
                 .clickLoginButton()
                 .clickMyBmwLogHomePage()
                 .clickBmwLoginButton();
@@ -38,8 +32,7 @@ public class TestUserLogin extends AbstractBaseTest {
             }
         }
 
-        Assert.assertEquals(driver.getCurrentUrl(), "https://login.bmwusa.com/oneid/#/profile?client=usahub&brand=bmw&country=US&language=en");
+        assertEquals(driver.getCurrentUrl(), "https://login.bmwusa.com/oneid/#/profile?client=usahub&brand=bmw&country=US&language=en");
         assertTrue(userLoginPage.TextProfile().isDisplayed());
-
     }
 }

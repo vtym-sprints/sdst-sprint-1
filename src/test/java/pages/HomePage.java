@@ -42,4 +42,5 @@ public class HomePage extends HomePageElements {
         waitUntilElementToBeClickableByXpath(BUILD_YOUR_OWN_BUTTON).click();
         return this;
     }
+
 }

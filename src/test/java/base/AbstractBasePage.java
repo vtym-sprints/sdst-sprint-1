@@ -7,7 +7,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,7 +18,6 @@ abstract public class AbstractBasePage {
     protected WebDriver driver;
     protected WebDriverWait wait;
     private int BASE_WAIT = 7000;
-
     public AbstractBasePage(WebDriver driver) {
         this.driver = driver;
         wait = new WebDriverWait(driver, ofMillis(BASE_WAIT));

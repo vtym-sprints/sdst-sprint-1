@@ -3,7 +3,6 @@ package pages.FollowingPages;
 import elements.LoginUserElements;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import pages.VisualizeAccessoriesPage;
 
 public class UserLoginPage extends LoginUserElements {
     public UserLoginPage(WebDriver driver) {
@@ -21,7 +20,7 @@ public class UserLoginPage extends LoginUserElements {
         waitUntilElementToBeVisibleByXpath((INPUT_EMAIL)).sendKeys("car.life23max@gmail.com");
         return this;
     }
-    public UserLoginPage inputPasswoed() {
+    public UserLoginPage inputPassword() {
         waitUntilElementToBeVisibleByXpath((INPUT_PASSWORD)).sendKeys("Qa1234567.");
         return this;
     }
