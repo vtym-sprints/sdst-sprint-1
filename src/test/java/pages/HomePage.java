@@ -1,10 +1,12 @@
 package pages;
 
+import elements.BuildYourOwnElements;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import elements.HomePageElements;
 
 import static base.CommonActions.jsClick;
+import static base.CommonActions.scrollToElement;
 
 public class HomePage extends HomePageElements {
 
@@ -43,5 +45,11 @@ public class HomePage extends HomePageElements {
     public HomePage clickBuildYourOwnButton() {
         waitUntilElementToBeClickableByXpath(BUILD_YOUR_OWN_BUTTON).click();
         return this;
+    }
+
+    public BuildYourOwnPage clickBuildYourOwnInFooter() {
+        scrollToElement(waitUntilElementToBeClickableByXpath(FOOTER_MENU), driver);
+        waitUntilElementToBeClickableByXpath(BUILD_YOUR_OWN).click();
+        return new BuildYourOwnPage(driver);
     }
 }
