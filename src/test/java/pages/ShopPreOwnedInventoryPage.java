@@ -44,7 +44,6 @@ public class ShopPreOwnedInventoryPage extends ShopPreOwnedInventoryElements {
 
     public ShopPreOwnedInventoryPage clickBodyStyle(WebElement style) {
         style.click();
-
         return new ShopPreOwnedInventoryPage(driver);
     }
 
