@@ -52,8 +52,9 @@ public class ShopPreOwnedInventoryPage extends ShopPreOwnedInventoryElements {
         return style.getText().trim();
     }
 
-    public void scrollToPriceFilter() {
+    public ShopPreOwnedInventoryPage scrollToPriceFilter() {
         scrollToElement(waitUntilElementToBeClickableByXpath(FILTER_PRICE_BTN), driver);
+        return this;
     }
 
     public ShopPreOwnedInventoryPage clickPriceFilter() {

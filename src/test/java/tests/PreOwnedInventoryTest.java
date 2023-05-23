@@ -45,8 +45,8 @@ public class PreOwnedInventoryTest extends AbstractBaseTest {
                 .as("Filter of body style " + nameOfBodyStyle + " doesn't selected.")
                 .contains(nameOfBodyStyle);
 
-        shopPreOwnedInventoryPage.scrollToPriceFilter();
         shopPreOwnedInventoryPage
+                .scrollToPriceFilter()
                 .clickPriceFilter()
                 .chooseRandomMinPrice()
                 .isTillLoader();
