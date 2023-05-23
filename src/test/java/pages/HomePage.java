@@ -7,7 +7,6 @@ import elements.HomePageElements;
 import static base.CommonActions.jsClick;
 import static base.CommonActions.scrollToElement;
 
-
 public class HomePage extends HomePageElements {
 
     public HomePage(WebDriver driver) {
@@ -45,7 +44,6 @@ public class HomePage extends HomePageElements {
     public ShopPreOwnedInventoryPage clickPreOwnedInventory(){
         scrollToElement(waitUntilElementToBeClickableByXpath(FOOTER_MENU),driver);
         waitUntilElementToBeClickableByXpath(PRE_OWNED_INVENTORY).click();
-
         return new ShopPreOwnedInventoryPage(driver);
     }
 

@@ -14,10 +14,9 @@ import static java.lang.Integer.parseInt;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class PreOwnedInventoryTest extends AbstractBaseTest {
-
     private final String zipCode = "07003";
 
-    @Test()
+    @Test
     public void checkFilteringByBodyStyleAndPrice() {
         HomePage homePage = new HomePage(driver);
         ZipCodePage zipCodePage = new ZipCodePage(driver);
@@ -48,16 +47,12 @@ public class PreOwnedInventoryTest extends AbstractBaseTest {
 
         shopPreOwnedInventoryPage.scrollToPriceFilter();
         shopPreOwnedInventoryPage
-                .clickPriceFilter();
-        shopPreOwnedInventoryPage
+                .clickPriceFilter()
                 .chooseRandomMinPrice()
                 .isTillLoader();
-        System.out.println(shopPreOwnedInventoryPage.getChooseMinPrice().getText());
-
         shopPreOwnedInventoryPage
                 .chooseRandomMaxPrice()
                 .isTillLoader();
-        System.out.println(shopPreOwnedInventoryPage.getChooseMaxPrice().getText());
 
         int minPrice = parseInt(replacePrice(shopPreOwnedInventoryPage.getChooseMinPrice()));
         int maxPrice = parseInt(replacePrice(shopPreOwnedInventoryPage.getChooseMaxPrice()));

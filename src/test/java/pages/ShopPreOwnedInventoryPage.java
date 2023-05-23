@@ -20,7 +20,6 @@ public class ShopPreOwnedInventoryPage extends ShopPreOwnedInventoryElements {
 
     public ShopPreOwnedInventoryPage chosePreOwned() {
         waitUntilElementToBeClickableByXpath(PRE_OWNED_CB).click();
-
         return new ShopPreOwnedInventoryPage(driver);
     }
 
@@ -28,7 +27,6 @@ public class ShopPreOwnedInventoryPage extends ShopPreOwnedInventoryElements {
         var bodyStyleFilter = waitUntilElementToBeClickableByXpath(FILTER_BODY_STYLE_BTN);
         scrollToElement(bodyStyleFilter, driver);
         bodyStyleFilter.click();
-
         return this;
     }
 

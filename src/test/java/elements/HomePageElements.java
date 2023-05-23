@@ -15,10 +15,9 @@ public class HomePageElements extends AbstractBasePage {
     public static final String BTN_FOLLOWING_INSTAGRAM = "//a[@aria-label='Instagram']";
     public static final String BTN_SHOP_BMW_PARTS_AND_ACCESSORIES =
             "//div[contains(@class,'__nav-holder')]//a[contains(text(),'Accessories')]";
-    public static final String
-            PRE_OWNED_INVENTORY = "//a[@analytics-event='footer-shopping-tools.cpo.shop-pre-owned.button']",
-            FOOTER_MENU = "//div[@class='accordion-base__trigger label-1--bold']",
-            GLOBAL_POPUP_DISMISS_BTN_SEL = "//button[contains(text(), 'Dismiss')]";
+    public static final String PRE_OWNED_INVENTORY = "//a[@analytics-event='footer-shopping-tools.cpo.shop-pre-owned.button']";
+    public static final String FOOTER_MENU = "//div[@class='accordion-base__trigger label-1--bold']";
+    public static final String GLOBAL_POPUP_DISMISS_BTN_SEL = "//button[contains(text(), 'Dismiss')]";
 
     public final static String BUILD_YOUR_OWN_BUTTON = "//a[@analytics-event='topnav.byo.byo.link']";
 }

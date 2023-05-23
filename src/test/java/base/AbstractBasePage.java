@@ -20,7 +20,6 @@ abstract public class AbstractBasePage {
     private int BASE_WAIT = 15000;
     private final String CIRCLE_LOADER = "//div[@class='load-indicator_loader_njc5r']";
 
-
     public AbstractBasePage(WebDriver driver) {
         this.driver = driver;
         wait = new WebDriverWait(driver, ofMillis(BASE_WAIT));
