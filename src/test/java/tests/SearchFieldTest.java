@@ -6,7 +6,6 @@ import org.testng.annotations.Test;
 import pages.HomePage;
 import pages.SearchResultPage;
 
-import static elements.HomeElements.BMW_URL;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class SearchFieldTest extends AbstractBaseTest {

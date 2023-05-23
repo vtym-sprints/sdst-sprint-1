@@ -3,8 +3,9 @@ package base;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,7 +16,7 @@ import static org.openqa.selenium.support.ui.ExpectedConditions.*;
 abstract public class AbstractBasePage {
     protected WebDriver driver;
     protected WebDriverWait wait;
-    int BASE_WAIT = 5000;
+    private int BASE_WAIT = 15000;
 
     public AbstractBasePage(WebDriver driver) {
         this.driver = driver;
