@@ -1,9 +1,8 @@
 package pages;
 
-import elements.BuildYourOwnElements;
+import elements.HomePageElements;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import elements.HomePageElements;
 
 import static base.CommonActions.jsClick;
 import static base.CommonActions.scrollToElement;
