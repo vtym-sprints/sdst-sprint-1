@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import elements.HomePageElements;
 
 import static base.CommonActions.jsClick;
+import static base.CommonActions.scrollToElement;
 
 public class HomePage extends HomePageElements {
 
@@ -38,6 +39,12 @@ public class HomePage extends HomePageElements {
         driver.close();
         goToNextTab(1);
         return this;
+    }
+
+    public ShopPreOwnedInventoryPage clickPreOwnedInventory(){
+        scrollToElement(waitUntilElementToBeClickableByXpath(FOOTER_MENU),driver);
+        waitUntilElementToBeClickableByXpath(PRE_OWNED_INVENTORY).click();
+        return new ShopPreOwnedInventoryPage(driver);
     }
 
     public HomePage clickBuildYourOwnButton() {
