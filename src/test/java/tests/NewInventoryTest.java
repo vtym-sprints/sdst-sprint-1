@@ -20,6 +20,7 @@ public class NewInventoryTest extends AbstractBaseTest {
         NewInventoryPage newInventoryPage = new NewInventoryPage(driver);
 
         homePage
+                .dismissPopup()
                 .clickModelsButton()
                 .clickShopInventoryButton();
 
