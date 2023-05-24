@@ -20,5 +20,10 @@ public class HomePageElements extends AbstractBasePage {
     public static final String BUILD_YOUR_OWN = "//a[@analytics-event='footer-shopping-tools.build-your-own.build-your-own.link']";
     public static final String PRE_OWNED_INVENTORY = "//a[@analytics-event='footer-shopping-tools.cpo.shop-pre-owned.button']";
     public static final String MODELS_BTN = "//button[@name='Models Flyout']";
+    public static final String MODELS_BUTTON = "//button[@analytics-event='topnav.menu.models-flyout.link']";
+    protected static final String SHOPPING_BUTTON = "//button[@name='Shopping Flyout']";
+    protected static final String SHOP_INVENTORY_BUTTON = "//a[@title='Shop Inventory']";
+    protected static final String SHOPPING_ZIP_CODE_FIELD = "//input[@id='zip_code']";
+    protected static final String SHOP_PRE_OWNED_BUTTON_IN_SHOPPING_TAB = "//button[@name='zip_btn_secondary']";
     public static final String CARS_IN_AVAILABILITY = "//a[@id='button-f4e1544f40'] ";
 }

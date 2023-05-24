@@ -13,8 +13,28 @@ public class HomePage extends HomePageElements {
         super(driver);
     }
 
+    public WebElement getModelsButton() {
+        return waitUntilElementToBeClickableByXpath(MODELS_BUTTON);
+    }
+
     public WebElement getCarsInAvailabilityButton() {
         return waitUntilElementToBeClickableByXpath(CARS_IN_AVAILABILITY);
+    }
+
+    public WebElement getShoppingButton() {
+        return waitUntilElementToBeClickableByXpath(SHOPPING_BUTTON);
+    }
+
+    public WebElement getShopInventoryButton() {
+        return waitUntilElementToBeClickableByXpath(SHOP_INVENTORY_BUTTON);
+    }
+
+    public WebElement getShoppingZipCodeField() {
+        return waitUntilElementToBeVisibleByXpath(SHOPPING_ZIP_CODE_FIELD);
+    }
+
+    private WebElement getShopPreOwnedInShoppingTabButton() {
+        return waitUntilElementToBeClickableByXpath(SHOP_PRE_OWNED_BUTTON_IN_SHOPPING_TAB);
     }
 
     public HomePage dismissPopup() {
@@ -55,6 +75,11 @@ public class HomePage extends HomePageElements {
         return new ShopPreOwnedInventoryPage(driver);
     }
 
+    public HomePage clickModelsButton() {
+        getModelsButton().click();
+        return this;
+    }
+
     public HomePage clickBuildYourOwnButton() {
         waitUntilElementToBeClickableByXpath(BUILD_YOUR_OWN_BUTTON).click();
         return this;
@@ -64,5 +89,25 @@ public class HomePage extends HomePageElements {
         scrollToElement(waitUntilElementToBeVisibleByXpath(FOOTER_MENU), driver);
         waitUntilElementToBeClickableByXpath(BUILD_YOUR_OWN).click();
         return new BuildYourOwnPage(driver);
+    }
+
+    public HomePage clickShoppingButton() {
+        getShoppingButton().click();
+        return this;
+    }
+
+    public HomePage clickShopInventoryButton() {
+        getShopInventoryButton().click();
+        return this;
+    }
+
+    public HomePage setZipCode(String zipCode) {
+        getShoppingZipCodeField().sendKeys(zipCode);
+        return this;
+    }
+
+    public HomePage clickShopPreOwnedButtonInShoppingTab() {
+        getShopPreOwnedInShoppingTabButton().click();
+        return this;
     }
 }
