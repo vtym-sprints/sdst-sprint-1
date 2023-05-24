@@ -28,7 +28,7 @@ public class NewInventoryTest extends AbstractBaseTest {
 
         newInventoryPage.setPriceFilterMin60k();
 
-        newInventoryPage.getCarPricesList().forEach(price -> {
+        newInventoryPage.getCardsPricesList().forEach(price -> {
             assertThat(parseInt(replacePrice(price))).isGreaterThanOrEqualTo(60000);
         });
     }

@@ -24,8 +24,8 @@ public class NewInventoryPage extends NewInventoryElements {
         return waitUntilElementToBeClickableByXpath(MIN_PRICE_60K);
     }
 
-    public List<WebElement> getCarPricesList() {
-        return waitUntilPresenceOfAllElementsByXpath(CAR_PRICES);
+    public List<WebElement> getCardsPricesList() {
+        return waitUntilPresenceOfAllElementsByXpath(CARDS_PRICES_LIST);
     }
 
     public NewInventoryPage setPriceFilterMin60k() {
