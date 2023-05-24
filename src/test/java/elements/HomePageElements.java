@@ -19,4 +19,6 @@ public class HomePageElements extends AbstractBasePage {
     public static final String FOOTER_MENU = "//div[@class='accordion-base__trigger label-1--bold']";
     public static final String BUILD_YOUR_OWN = "//a[@analytics-event='footer-shopping-tools.build-your-own.build-your-own.link']";
     public static final String PRE_OWNED_INVENTORY = "//a[@analytics-event='footer-shopping-tools.cpo.shop-pre-owned.button']";
+    public static final String MODELS_BTN = "//button[@name='Models Flyout']";
+    public static final String CARS_IN_AVAILABILITY = "//a[@id='button-f4e1544f40'] ";
 }

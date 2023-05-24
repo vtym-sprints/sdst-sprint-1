@@ -13,8 +13,6 @@ public class HomePage extends HomePageElements {
         super(driver);
     }
 
-    private static final String CARS_IN_AVAILABILITY = "//a[@id='button-f4e1544f40'] ";
-
     public WebElement getCarsInAvailabilityButton() {
         return waitUntilElementToBeClickableByXpath(CARS_IN_AVAILABILITY);
     }
@@ -35,14 +33,24 @@ public class HomePage extends HomePageElements {
         return this;
     }
 
+    public BuildYourOwnPage clickBuildYourOwnBtn() {
+        waitUntilElementToBeClickableByXpath(BUILD_YOUR_OWN_BUTTON).click();
+        return new BuildYourOwnPage(driver);
+    }
+
+    public HomePage clickModelsBtn() {
+        waitUntilElementToBeClickableByXpath(MODELS_BTN).click();
+        return this;
+    }
+
     public HomePage closeAndSwitchToHomePage() {
         driver.close();
         goToNextTab(1);
         return this;
     }
 
-    public ShopPreOwnedInventoryPage clickPreOwnedInventory(){
-        scrollToElement(waitUntilElementToBeClickableByXpath(FOOTER_MENU),driver);
+    public ShopPreOwnedInventoryPage clickPreOwnedInventory() {
+        scrollToElement(waitUntilElementToBeClickableByXpath(FOOTER_MENU), driver);
         waitUntilElementToBeClickableByXpath(PRE_OWNED_INVENTORY).click();
         return new ShopPreOwnedInventoryPage(driver);
     }
