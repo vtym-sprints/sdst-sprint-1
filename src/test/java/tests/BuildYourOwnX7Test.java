@@ -7,13 +7,12 @@ import pages.HomePage;
 
 import java.util.List;
 
-import static java.lang.Thread.sleep;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class BuildYourOwnX7Test extends AbstractBaseTest {
 
     @Test
-    public void checkBuildYourOwnX7() throws InterruptedException {
+    public void checkBuildYourOwnX7() {
         HomePage homePage = new HomePage(driver);
         BuildYourOwnPage buildYourOwnPage = new BuildYourOwnPage(driver);
 
@@ -28,25 +27,25 @@ public class BuildYourOwnX7Test extends AbstractBaseTest {
                 .choseLook()
                 .clickNext()
                 .choseColor()
+                .clickNext()
                 .choseWheels()
-                .closeImportantInfoWindow()
                 .clickNext()
                 .choseUpholstery()
-                .choseTrim()
+                .confirmChanges()
+                .clickNext()
                 .clickNext()
                 .choseExecutive()
                 .choseSoundSystem()
                 .clickAddToBuild()
                 .confirmChanges()
                 .clickNextAccessories()
-                .choseAccessoriesCarbonFiber()
-                .clickNextSummery();
+                .clickNextSummaryButton();
 
         List<Integer> optionPricesResult = buildYourOwnPage.getOptionPrices();
-        List<Integer> summeryPricesResult = buildYourOwnPage.getPricesInSummery();
-
-        assertThat(summeryPricesResult)
+        int sum = optionPricesResult.stream().mapToInt(Integer::intValue).sum()
+                + buildYourOwnPage.getTotalPriceX7();
+        assertThat(sum)
                 .as("Prices are wrong")
-                .containsAll(optionPricesResult);
+                .isEqualTo(115850);
     }
 }

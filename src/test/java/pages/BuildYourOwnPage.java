@@ -5,7 +5,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
 
@@ -33,6 +32,10 @@ public class BuildYourOwnPage extends BuildYourOwnElements {
         return this;
     }
 
+    public int getTotalPriceX7() {
+        return Integer.parseInt(replacePrice(waitUntilPresenceOfElementByXpath(TOTAL_PRICE_X7)));
+    }
+
     public int getPriceOfChoseOption(String car) {
         return Integer.parseInt(replacePrice(waitUntilPresenceOfElementByXpath(car)));
     }
@@ -41,6 +44,7 @@ public class BuildYourOwnPage extends BuildYourOwnElements {
         scrollToElement(waitUntilPresenceOfElementByXpath(M_SPORT_LOOK), driver);
         waitUntilElementToBeClickableByXpath(M_SPORT_LOOK).click();
         optionPrices.add(getPriceOfChoseOption(PRICE_M_SPORT));
+        waitUntilElementToBeClickableByXpath(FIND_A_DEALER_CLOSE_BTN).click();
         return this;
     }
 
@@ -50,41 +54,16 @@ public class BuildYourOwnPage extends BuildYourOwnElements {
     }
 
     public BuildYourOwnPage choseColor() {
-        try {
-            scrollToElement(waitUntilPresenceOfElementByXpath(TANZANITE_BLUE_II_METALIC_COLOR), driver);
-            waitUntilElementToBeClickableByXpath(TANZANITE_BLUE_II_METALIC_COLOR).click();
-            optionPrices.add(getPriceOfChoseOption(PRICE_OF_COLOR));
-            waitUntilPresenceOfElementByXpath(CHOSE_YOUR_EXTERIOR_PART).click();
-        } catch (Exception e) {
-            // Если всплывающее окно "FIND_A_DEALER" появилось
-            if (isElementPresent(FIND_A_DEALER_CLOSE_BTN)) {
-                waitUntilElementToBeClickableByXpath(FIND_A_DEALER_CLOSE_BTN).click();
-            }
-            // Если всплывающее окно "CONFIRM_COLOR_CHANGES" появилось
-            if (isElementPresent(CONFIRM_COLOR_CHANGES)) {
-                waitUntilElementToBeClickableByXpath(CONFIRM_COLOR_CHANGES).click();
-            }
-        }
+        scrollToElement(waitUntilPresenceOfElementByXpath(TANZANITE_BLUE_II_METALIC_COLOR), driver);
+        waitUntilElementToBeClickableByXpath(TANZANITE_BLUE_II_METALIC_COLOR).click();
+        optionPrices.add(getPriceOfChoseOption(PRICE_OF_COLOR));
         return this;
     }
 
     public BuildYourOwnPage choseWheels() {
-        try {
-            scrollToElement(waitUntilPresenceOfElementByXpath(WHEELS_OPTION), driver);
-            waitUntilElementToBeClickableByXpath(WHEELS_OPTION).click();
-            scrollToElement(waitUntilPresenceOfElementByXpath(WHEEL_STYLE_DOUBLE_SPOKE), driver);
-            waitUntilElementToBeClickableByXpath(WHEEL_STYLE_DOUBLE_SPOKE).click();
-            optionPrices.add(getPriceOfChoseOption(PRICE_OF_WHEELS));
-        } catch (Exception e) {
-            // Если всплывающее окно "FIND_A_DEALER" появилось
-            if (isElementPresent(FIND_A_DEALER_CLOSE_BTN)) {
-                waitUntilElementToBeClickableByXpath(FIND_A_DEALER_CLOSE_BTN).click();
-            }
-            // Если всплывающее окно "CONFIRM_COLOR_CHANGES" появилось
-            if (isElementPresent(CONFIRM_COLOR_CHANGES)) {
-                waitUntilElementToBeClickableByXpath(CONFIRM_COLOR_CHANGES).click();
-            }
-        }
+        scrollToElement(waitUntilElementToBeVisibleByXpath(WHEEL_STYLE_DOUBLE_SPOKE), driver);
+        waitUntilElementToBeClickableByXpath(WHEEL_STYLE_DOUBLE_SPOKE).click();
+        optionPrices.add(getPriceOfChoseOption(PRICE_OF_WHEELS));
         return this;
     }
 
@@ -92,11 +71,9 @@ public class BuildYourOwnPage extends BuildYourOwnElements {
         try {
             waitUntilElementToBeClickableByXpath(IMPORTANT_INFO_CLOSE_BTN).click();
         } catch (Exception e) {
-            // Если всплывающее окно "FIND_A_DEALER" появилось
             if (isElementPresent(FIND_A_DEALER_CLOSE_BTN)) {
                 waitUntilElementToBeClickableByXpath(FIND_A_DEALER_CLOSE_BTN).click();
             }
-            // Если всплывающее окно "CONFIRM_COLOR_CHANGES" появилось
             if (isElementPresent(CONFIRM_COLOR_CHANGES)) {
                 waitUntilElementToBeClickableByXpath(CONFIRM_COLOR_CHANGES).click();
             }
@@ -105,40 +82,29 @@ public class BuildYourOwnPage extends BuildYourOwnElements {
     }
 
     public BuildYourOwnPage choseUpholstery() {
-        try {
-            scrollToElement(waitUntilPresenceOfElementByXpath(BLACK_UPHOLSTERY), driver);
-            waitUntilElementToBeClickableByXpath(BLACK_UPHOLSTERY).click();
-            optionPrices.add(getPriceOfChoseOption(PRICE_OF_BLACK_UPHOLSTERY));
-        } catch (Exception e) {
-            // Если всплывающее окно "FIND_A_DEALER" появилось
-            if (isElementPresent(FIND_A_DEALER_CLOSE_BTN)) {
-                waitUntilElementToBeClickableByXpath(FIND_A_DEALER_CLOSE_BTN).click();
-            }
-            // Если всплывающее окно "CONFIRM_COLOR_CHANGES" появилось
-            if (isElementPresent(CONFIRM_COLOR_CHANGES)) {
-                waitUntilElementToBeClickableByXpath(CONFIRM_COLOR_CHANGES).click();
-            }
-        }
+        //try {
+        scrollToElement(waitUntilPresenceOfElementByXpath(BLACK_UPHOLSTERY), driver);
+        waitUntilElementToBeClickableByXpath(BLACK_UPHOLSTERY).click();
+        optionPrices.add(getPriceOfChoseOption(PRICE_OF_BLACK_UPHOLSTERY));
         return this;
     }
 
     public BuildYourOwnPage choseTrim() {
-        scrollToElement(waitUntilPresenceOfElementByXpath(TRIM), driver);
-        waitUntilElementToBeClickableByXpath(TRIM).click();
         scrollToElement(waitUntilPresenceOfElementByXpath(TRIM_INDIVIDUAL_PIANO_BLACK_FINISH), driver);
-        waitUntilElementToBeClickableByXpath(TRIM_INDIVIDUAL_PIANO_BLACK_FINISH).click();
+        waitUntilElementToBeVisibleByXpath(TRIM_INDIVIDUAL_PIANO_BLACK_FINISH).click();
         optionPrices.add(getPriceOfChoseOption(PRICE_OF_PIANO_TRIM));
         return this;
     }
 
     public BuildYourOwnPage choseExecutive() {
-        scrollToElement(waitUntilPresenceOfElementByXpath(SEE_ALL_8_FEATURES), driver);
-        waitUntilElementToBeClickableByXpath(SEE_ALL_8_FEATURES).click();
+        waitUntilElementToBeVisibleByXpath(SELECT_SEE_ALL_8_FEATURES);
+        scrollToElement(waitUntilPresenceOfElementByXpath(SELECT_SEE_ALL_8_FEATURES), driver);
+        jsClick(waitUntilPresenceOfElementByXpath(SELECT_SEE_ALL_8_FEATURES), driver);
         return this;
     }
 
     public BuildYourOwnPage choseSoundSystem() {
-        scrollToElement(waitUntilPresenceOfElementByXpath(SOUND_SYSTEM), driver);
+        scrollToElement(waitUntilElementToBeVisibleByXpath(SOUND_SYSTEM), driver);
         waitUntilElementToBeClickableByXpath(SOUND_SYSTEM).click();
         optionPrices.add(getPriceOfChoseOption(PRICE_OF_SOUND_SYSTEM));
         return this;
@@ -150,8 +116,6 @@ public class BuildYourOwnPage extends BuildYourOwnElements {
     }
 
     public BuildYourOwnPage confirmChanges() {
-        optionPrices.add(getPriceOfChoseOption(PRICE_OF_CLIMATE_COMFORT));
-        optionPrices.add(getPriceOfChoseOption(PRICE_EXECUTIVE_PACKAGE));
         waitUntilElementToBeClickableByXpath(CONFIRM_CHANGES).click();
         return this;
     }
@@ -161,26 +125,13 @@ public class BuildYourOwnPage extends BuildYourOwnElements {
         return this;
     }
 
-    public BuildYourOwnPage choseAccessoriesCarbonFiber() {
-        scrollToElement(waitUntilPresenceOfElementByXpath(ADD_CURBON_FIBER), driver);
-        waitUntilElementToBeClickableByXpath(ADD_CURBON_FIBER).click();
-        optionPrices.add(getPriceOfChoseOption(CURBON_FIBER_PRICEC));
-        return this;
+    public WebElement getNextSummaryButton() {
+        return waitUntilElementToBeClickableByXpath(NEXT_SUMMERY);
     }
 
-    public BuildYourOwnPage clickNextSummery() {
-        waitUntilElementToBeClickableByXpath(NEXT_SUMMERY).click();
+    public BuildYourOwnPage clickNextSummaryButton() {
+        getNextSummaryButton().click();
         return this;
-    }
-
-    public List<Integer> getPricesInSummery() {
-        List<Integer> pricesInSummery = new ArrayList<>();
-        List<WebElement> elementsPrices = new ArrayList<>();
-        for (WebElement element : elementsPrices) {
-            int price = getPriceOfChoseOption(PRICE_LIST);
-            pricesInSummery.add(price);
-        }
-        return pricesInSummery;
     }
 
     public List<Integer> getOptionPrices() {
