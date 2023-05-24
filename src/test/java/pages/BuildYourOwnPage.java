@@ -9,7 +9,7 @@ public class BuildYourOwnPage extends BuildYourOwnElements {
         super(driver);
     }
 
-    public BuildYourOwnPage selectx6MSportsActivityCoupeBtn() {
+    public BuildYourOwnPage selectX6MSportsActivityCoupeBtn() {
         waitUntilElementToBeClickableByXpath(X6_M_SPORTS_ACTIVITY_COUPE_SELECT).click();
         return this;
     }
@@ -36,16 +36,6 @@ public class BuildYourOwnPage extends BuildYourOwnElements {
 
     public BuildYourOwnPage pressNextUpholstery() {
         waitUntilElementToBeClickableByXpath(NEXT_UPHOLSTERY_BTN).click();
-        return this;
-    }
-
-    public BuildYourOwnPage selectLeatherColorCognac() {
-        waitUntilElementToBeClickableByXpath(LEATHER_COLOR_COGNAC).click();
-        return this;
-    }
-
-    public BuildYourOwnPage selectX4BlackAlcantara() {
-        waitUntilElementToBeClickableByXpath(X4_BLACK_ALCANTARA).click();
         return this;
     }
 

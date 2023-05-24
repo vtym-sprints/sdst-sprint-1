@@ -1,7 +1,6 @@
 package tests;
 
 import base.AbstractBaseTest;
-import org.testng.AssertJUnit;
 import org.testng.annotations.Test;
 import pages.BuildYourOwnPage;
 import pages.HomePage;
@@ -15,7 +14,8 @@ public class CheckBuildX4Test extends AbstractBaseTest {
 
         HomePage homePage = new HomePage(driver);
 
-        homePage.clickDismissBtn()
+        homePage
+                .clickDismissBtn()
                 .clickBuildYourOwnBtn();
 
         BuildYourOwnPage buildYourOwnPage = new BuildYourOwnPage(driver);
