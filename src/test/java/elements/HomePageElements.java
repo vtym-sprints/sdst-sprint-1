@@ -18,6 +18,7 @@ public class HomePageElements extends AbstractBasePage {
     public static final String PRE_OWNED_INVENTORY = "//a[@analytics-event='footer-shopping-tools.cpo.shop-pre-owned.button']";
     public static final String FOOTER_MENU = "//div[@class='accordion-base__trigger label-1--bold']";
     public static final String GLOBAL_POPUP_DISMISS_BTN_SEL = "//button[contains(text(), 'Dismiss')]";
-
+    public static final String MODELS_BUTTON = "//button[@analytics-event='topnav.menu.models-flyout.link']";
     public static final String BUILD_YOUR_OWN_BUTTON = "//a[@analytics-event='topnav.byo.byo.link']";
+    protected static final String SHOP_INVENTORY_BUTTON = "//a[@title='Shop Inventory']";
 }
