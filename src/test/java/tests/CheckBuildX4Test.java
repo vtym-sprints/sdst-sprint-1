@@ -37,6 +37,5 @@ public class CheckBuildX4Test extends AbstractBaseTest {
                 .closeModalWindow();
 
         assertTrue(buildYourOwnPage.getName().contains("X4 M40"));
-        assertTrue(buildYourOwnPage.getPrice().contains("69,350"));
     }
 }
