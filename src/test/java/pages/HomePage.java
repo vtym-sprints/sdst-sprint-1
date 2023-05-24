@@ -20,4 +20,9 @@ public class HomePage extends HomePageElements {
         goToNextTab(1);
         return this;
     }
+
+    public HomePage clickBuildYourOwnBtn () {
+        waitUntilElementToBeClickableByXpath(BUILD_OWN_BTN).click();
+        return this;
+    }
 }
