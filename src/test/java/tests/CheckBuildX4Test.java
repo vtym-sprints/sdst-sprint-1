@@ -1,10 +1,12 @@
 package tests;
 
-import base.AbstractBasePage;
 import base.AbstractBaseTest;
-import org.openqa.selenium.WebDriver;
+import org.testng.AssertJUnit;
 import org.testng.annotations.Test;
+import pages.BuildYourOwnPage;
 import pages.HomePage;
+
+import static org.testng.Assert.assertTrue;
 
 public class CheckBuildX4Test extends AbstractBaseTest {
 
@@ -13,28 +15,29 @@ public class CheckBuildX4Test extends AbstractBaseTest {
 
         HomePage homePage = new HomePage(driver);
 
-        homePage.clickBuildYourOwnBtn();
+        homePage.clickDismissBtn()
+                .clickBuildYourOwnBtn();
 
-        BuildYourOwnPage buildYourOwnPage=new BuildYourOwnPage(driver);
+        BuildYourOwnPage buildYourOwnPage = new BuildYourOwnPage(driver);
 
-        buildYourOwnPage.x4MSportsSelect().click();
-        buildYourOwnPage.customizeThisBuildBtn().click();
+        buildYourOwnPage
+                .selectX4Coupe()
+                .selectx4MSports()
+                .customizeThisBuildBtn()
+                .closeModalZip()
+                .pressNextColor()
+                .selectX4AlpineWhiteColor()
+                .pressNextWheelsBtn()
+                .pressNextUpholstery()
+                .selectX4BlackAlcantara()
+                .pressNextTrimBtn()
+                .selectX4SmokeGrey()
+                .pressNextOptionsBtn()
+                .pressNextAccessories()
+                .pressNextSummaryBtn()
+                .closeModalWindow();
 
-        buildYourOwnPage.modalWindowClose().click();
-
-        buildYourOwnPage.x4AlpineWhiteColor();
-        buildYourOwnPage.nextWheelsBtn();
-        buildYourOwnPage.nextUpholstery();
-        buildYourOwnPage.x4BlackAlcantara();
-        buildYourOwnPage.nextTrimBtn();
-        buildYourOwnPage.x4SmokeGrey();
-        buildYourOwnPage.nextOptionsBtn();
-        buildYourOwnPage.nextAccessories();
-        buildYourOwnPage.nextSummaryBtn();
-
-        buildYourOwnPage.modalWindowClose();
-
-        assertTrue(buildYourOwnPage.checkName().getText().contains("X4 M40"));
-        assertTrue(buildYourOwnPage.checkPrise().getText().contains("68,100"));
+        assertTrue(buildYourOwnPage.getName().contains("X4 M40"));
+        assertTrue(buildYourOwnPage.getPrice().contains("68,100"));
     }
 }

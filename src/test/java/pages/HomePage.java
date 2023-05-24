@@ -25,4 +25,9 @@ public class HomePage extends HomePageElements {
         waitUntilElementToBeClickableByXpath(BUILD_OWN_BTN).click();
         return this;
     }
+
+    public HomePage clickDismissBtn() {
+        waitUntilElementToBeClickableByXpath(CLICK_DISMISS_BTN).click();
+        return this;
+    }
 }

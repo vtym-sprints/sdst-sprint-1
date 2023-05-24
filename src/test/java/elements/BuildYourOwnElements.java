@@ -2,7 +2,6 @@ package elements;
 
 import base.AbstractBasePage;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
 public class BuildYourOwnElements extends AbstractBasePage {
     public BuildYourOwnElements (WebDriver driver) {
@@ -25,12 +24,12 @@ public class BuildYourOwnElements extends AbstractBasePage {
     public static final String MODAL_WINDOW_CLOSE_BTN = "//button[@aria-label='Close Zipcode Modal']";
     public static final String X5_M_SPORTS_SELECT = "//a[contains(@aria-label, 'Select X5 M Sports')]";
     public static final String X5_M_COMPETITION = "//div[contains(text(),'122,300')]/following-sibling::a";
-    public static final String CHECK_NAME = "//h1[@class='headline-4']";
-    public static final String CHECK_PRICE = "//h5[@class='build-price headline-5']";
+    public static final String GET_NAME = "//h1[@class='headline-4']";
+    public static final String GET_PRICE = "//h5[@class='build-price headline-5']";
     public static final String X4_M_SPORTS_SELECT = "//a[@aria-label='Select X4 M Sports Activity Coupe']";
     public static final String X4_ALPINE_WHITE_COLOR = "//div[contains(text(), 'Alpine White')]";
-    public static final String X4_BLACK_ALCANTARA = "//div[contains(text(), 'Black Perforated')]";
-    public static final String X4_SMOKE_GREY = "//div[contains(text(), 'Smoke Grey Aluminum Rhombicle')]";
+    public static final String X4_BLACK_ALCANTARA = "//div[contains(text(), 'Canberra Beige')]";
+    public static final String X4_SMOKE_GREY = "//div[contains(text(), 'Aluminum')]";
     public static final String NEXT_ACCESSORIES = "//a[contains(text(), 'Next / Accessories')]";
     public static final String NEXT_COLOR_BTN = "//a[contains(text(), 'Next / Color')]";
     public static final String MODAL_ZIP_CLOSE = "//button[@aria-label='Close Zipcode Modal']";
@@ -39,6 +38,7 @@ public class BuildYourOwnElements extends AbstractBasePage {
     public static final String XM_CHOOSING = "//div[text()='XM']";
     public static final String XM_BUILD_OWN = "//a[@href='/vehicles/m-models/xm-plug-in-hybrid/build-your-own.html']";
     public static final String X4_M_SELECT = "//a[@title='2023 BMW X4 M']";
+    public static final String X4_M_COUPE_SELECT = "//a[contains(@title,'X4 M Sports Activity Coupe')]";
     public static final String XM_WHITE_COLOR = "//div[contains(text(), 'White')]";
     public static final String XM_ORANGE_LEATHER = "//div[contains(text(), 'Orange')]";
     public static final String XM_SELECT_BUILD = "//a[@href='/build-your-own.html#/studio/23SR']";
