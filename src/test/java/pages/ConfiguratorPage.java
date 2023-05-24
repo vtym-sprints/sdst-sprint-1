@@ -63,7 +63,6 @@ public class ConfiguratorPage extends ConfiguratorElements {
         return waitUntilElementToBeClickableByXpath(NEXT_SUMMARY_BUTTON);
     }
 
-
     public WebElement getLookMSportElement() {
         return waitUntilElementToBeVisibleByXpath(LOOK_MSPORT);
     }
@@ -184,32 +183,26 @@ public class ConfiguratorPage extends ConfiguratorElements {
     }
 
     public int setColorAventurinRedMetallic() {
-        int priceTag;
-
         moveCursor(getColorAlpineWhiteElement(), driver);
         scrollToElement(getColorAventurinRedMetallicElement(), driver);
-        priceTag = getColorAventurinRedMetallicPrice();
+        int priceTag = getColorAventurinRedMetallicPrice();
         jsClick(getColorAventurinRedMetallicElement(), driver);
         return priceTag;
     }
 
     public int setWheels20MYSpokeBiColorJetBlack() {
-        int priceTag;
-
         moveCursor(getWheels18DoubleSpokeBurnishedOrbitGreyElement(), driver);
         scrollToElement(getWheels20MYSpokeBiColorJetBlackElement(), driver);
-        priceTag = getWheels20MYSpokeBiColorJetBlackPrice();
+        int priceTag = getWheels20MYSpokeBiColorJetBlackPrice();
         jsClick(getWheels20MYSpokeBiColorJetBlackElement(), driver);
         return priceTag;
     }
 
     public int setExecutivePackage() {
-        int priceTag;
-
         scrollToElement(getButtonSelectExecutivePackage(), driver);
         jsClick(getButtonSelectExecutivePackage(), driver);
         getButtonAddToBuild().click();
-        priceTag = getSelectionPriceChange();
+        int priceTag = getSelectionPriceChange();
         getButtonConfirmChanges().click();
         return priceTag;
     }
