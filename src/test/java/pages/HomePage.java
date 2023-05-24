@@ -13,8 +13,16 @@ public class HomePage extends HomePageElements {
         super(driver);
     }
 
+    public WebElement getModelsButton() {
+        return waitUntilElementToBeClickableByXpath(MODELS_BUTTON);
+    }
+
     public WebElement getCarsInAvailabilityButton() {
         return waitUntilElementToBeClickableByXpath(CARS_IN_AVAILABILITY);
+    }
+
+    public WebElement getShopInventoryButton() {
+        return waitUntilElementToBeClickableByXpath(SHOP_INVENTORY_BUTTON);
     }
 
     public HomePage dismissPopup() {
@@ -55,8 +63,18 @@ public class HomePage extends HomePageElements {
         return new ShopPreOwnedInventoryPage(driver);
     }
 
+    public HomePage clickModelsButton() {
+        getModelsButton().click();
+        return this;
+    }
+
     public HomePage clickBuildYourOwnButton() {
         waitUntilElementToBeClickableByXpath(BUILD_YOUR_OWN_BUTTON).click();
+        return this;
+    }
+
+    public HomePage clickShopInventoryButton() {
+        getShopInventoryButton().click();
         return this;
     }
 }
