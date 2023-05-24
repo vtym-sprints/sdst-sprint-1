@@ -13,8 +13,6 @@ public class HomePage extends HomePageElements {
         super(driver);
     }
 
-    private static final String CARS_IN_AVAILABILITY = "//a[@id='button-f4e1544f40'] ";
-
     public WebElement getModelsButton() {
         return waitUntilElementToBeClickableByXpath(MODELS_BUTTON);
     }
@@ -56,6 +54,16 @@ public class HomePage extends HomePageElements {
     public HomePage clickAndSwitchToFollowingPage(String locator) {
         waitUntilElementToBeClickableByXpath(locator).click();
         goToNextTab(2);
+        return this;
+    }
+
+    public BuildYourOwnPage clickBuildYourOwnBtn() {
+        waitUntilElementToBeClickableByXpath(BUILD_YOUR_OWN_BUTTON).click();
+        return new BuildYourOwnPage(driver);
+    }
+
+    public HomePage clickModelsBtn() {
+        waitUntilElementToBeClickableByXpath(MODELS_BTN).click();
         return this;
     }
 

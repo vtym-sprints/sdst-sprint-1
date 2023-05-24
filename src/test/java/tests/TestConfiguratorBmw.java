@@ -24,21 +24,22 @@ public class TestConfiguratorBmw extends AbstractBaseTest {
         int calculatedPrice = configuratorPage.getCurrentPrice();
 
         calculatedPrice += configuratorPage.setLookMSport();
-        configuratorPage.clickButtonNextPage();
+        configuratorPage.clickNextColorButton();
 
         calculatedPrice += configuratorPage.setColorAventurinRedMetallic();
-        configuratorPage.clickButtonNextPage();
+        configuratorPage
+                .clickNextWheelsButton()
+                .closeZipcodeModal();
 
         calculatedPrice += configuratorPage.setWheels20MYSpokeBiColorJetBlack();
         configuratorPage
-                .regularClickButtonNextPage()
-                .regularClickButtonNextPage()
-                .regularClickButtonNextPage()
-                .regularClickButtonNextPage();
+                .clickNextUpholsteryButton()
+                .clickNextTrimButton()
+                .clickNextOptionsButton();
 
         calculatedPrice += configuratorPage.setExecutivePackage();
         calculatedPrice += configuratorPage.setDrivingAssistanceProfessionalPackage();
-        configuratorPage.clickButtonNextPage();
+        configuratorPage.clickNextSummaryButton();
 
         Assert.assertEquals(configuratorPage.getEstimatedPrice(), calculatedPrice);
     }

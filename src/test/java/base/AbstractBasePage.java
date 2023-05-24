@@ -15,6 +15,7 @@ import static java.time.Duration.ofMillis;
 import static org.openqa.selenium.support.ui.ExpectedConditions.*;
 
 abstract public class AbstractBasePage {
+
     protected WebDriver driver;
     protected WebDriverWait wait;
     private int BASE_WAIT = 15000;
@@ -61,4 +62,3 @@ abstract public class AbstractBasePage {
         sleep(100);
     }
 }
-
