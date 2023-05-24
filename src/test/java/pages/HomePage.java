@@ -1,8 +1,8 @@
 package pages;
 
+import elements.HomePageElements;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import elements.HomePageElements;
 
 import static base.CommonActions.jsClick;
 import static base.CommonActions.scrollToElement;
@@ -33,6 +33,10 @@ public class HomePage extends HomePageElements {
 
     public WebElement getShoppingZipCodeField() {
         return waitUntilElementToBeVisibleByXpath(SHOPPING_ZIP_CODE_FIELD);
+    }
+
+    private WebElement getShopNewInShoppingTabButton() {
+        return waitUntilElementToBeClickableByXpath(SHOP_NEW_BUTTON_IN_SHOPPING_TAB);
     }
 
     private WebElement getShopPreOwnedInShoppingTabButton() {
@@ -89,6 +93,11 @@ public class HomePage extends HomePageElements {
 
     public HomePage setZipCode(String zipCode) {
         getShoppingZipCodeField().sendKeys(zipCode);
+        return this;
+    }
+
+    public HomePage clickShopNewButtonInShoppingTab() {
+        getShopNewInShoppingTabButton().click();
         return this;
     }
 

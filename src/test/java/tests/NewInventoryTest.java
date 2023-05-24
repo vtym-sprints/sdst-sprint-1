@@ -1,6 +1,7 @@
 package tests;
 
 import base.AbstractBaseTest;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.HomePage;
 import pages.NewInventoryPage;
@@ -29,5 +30,24 @@ public class NewInventoryTest extends AbstractBaseTest {
         newInventoryPage.getCardsPricesList().forEach(price -> {
             assertThat(price).isGreaterThanOrEqualTo(60000);
         });
+    }
+
+    @Test
+    public void checkSortingByPrice() {
+        HomePage homePage = new HomePage(driver);
+        ZipCodePage zipCodePage = new ZipCodePage(driver);
+        NewInventoryPage newInventoryPage = new NewInventoryPage(driver);
+
+        homePage
+                .dismissPopup()
+                .clickShoppingButton()
+                .setZipCode(zipCode)
+                .clickShopNewButtonInShoppingTab();
+
+        zipCodePage.chooseZipCodeWithNoDealerPick(zipCode);
+
+        newInventoryPage.setSortingRulePriceAscending();
+
+        Assert.assertTrue(newInventoryPage.areCardsSortedByPriceAscending());
     }
 }

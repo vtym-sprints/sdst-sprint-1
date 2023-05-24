@@ -23,5 +23,6 @@ public class HomePageElements extends AbstractBasePage {
     protected static final String SHOPPING_BUTTON = "//button[@name='Shopping Flyout']";
     protected static final String SHOP_INVENTORY_BUTTON = "//a[@title='Shop Inventory']";
     protected static final String SHOPPING_ZIP_CODE_FIELD = "//input[@id='zip_code']";
+    protected static final String SHOP_NEW_BUTTON_IN_SHOPPING_TAB = "//button[@name='zip_btn']";
     protected static final String SHOP_PRE_OWNED_BUTTON_IN_SHOPPING_TAB = "//button[@name='zip_btn_secondary']";
 }
