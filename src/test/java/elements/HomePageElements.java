@@ -5,6 +5,10 @@ import org.openqa.selenium.WebDriver;
 
 public class HomePageElements extends AbstractBasePage {
 
+    public HomePageElements(WebDriver driver) {
+        super(driver);
+    }
+
     public static final String BTN_FOLLOWING_FACEBOOK = "//a[@aria-label='Facebook']";
     public static final String BTN_FOLLOWING_TWITTER = "//a[@aria-label='Twitter']";
     public static final String BTN_FOLLOWING_YOUTUBE = "//a[@aria-label='Youtube']";
@@ -13,7 +17,6 @@ public class HomePageElements extends AbstractBasePage {
     public final static String BUILD_YOUR_OWN_BUTTON = "//a[@analytics-event='topnav.byo.byo.link']";
     public static final String BTN_SHOP_BMW_PARTS_AND_ACCESSORIES = "//div[contains(@class,'__nav-holder')]//a[contains(text(),'Accessories')]";
     public static final String MODELS_BTN = "//button[@name='Models Flyout']";
-    public HomePageElements(WebDriver driver) {
-        super(driver);
-    }
+    public static final String PRE_OWNED_INVENTORY = "//a[@analytics-event='footer-shopping-tools.cpo.shop-pre-owned.button']";
+    public static final String FOOTER_MENU = "//div[@class='accordion-base__trigger label-1--bold']";
 }
