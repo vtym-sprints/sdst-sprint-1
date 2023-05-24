@@ -29,7 +29,6 @@ public class CheckBuildX4Test extends AbstractBaseTest {
                 .selectX4AlpineWhiteColor()
                 .pressNextWheelsBtn()
                 .pressNextUpholstery()
-                .selectX4BlackAlcantara()
                 .pressNextTrimBtn()
                 .selectX4SmokeGrey()
                 .pressNextOptionsBtn()
@@ -38,6 +37,6 @@ public class CheckBuildX4Test extends AbstractBaseTest {
                 .closeModalWindow();
 
         assertTrue(buildYourOwnPage.getName().contains("X4 M40"));
-        assertTrue(buildYourOwnPage.getPrice().contains("68,100"));
+        assertTrue(buildYourOwnPage.getPrice().contains("69,350"));
     }
 }
