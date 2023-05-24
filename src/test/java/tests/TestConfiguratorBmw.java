@@ -10,7 +10,7 @@ import pages.HomePage;
 public class TestConfiguratorBmw extends AbstractBaseTest {
 
     @Test
-    public void reviewPriceOfBuilt5Series() {
+    public void checkPriceOfBuilt5Series() {
         ConfiguratorPage configuratorPage = new ConfiguratorPage(driver);
 
         new HomePage(driver)
