@@ -5,8 +5,6 @@ import org.testng.annotations.Test;
 import pages.BmwM8Page;
 import pages.HomePage;
 
-import static base.CommonActions.scrollToElement;
-
 public class TestConfiguratorBmwM8 extends AbstractBaseTest {
 
     @Test
