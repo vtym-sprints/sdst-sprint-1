@@ -41,13 +41,19 @@ public class HomePage extends HomePageElements {
         return this;
     }
 
+    public ShopPreOwnedInventoryPage clickPreOwnedInventory(){
+        scrollToElement(waitUntilElementToBeClickableByXpath(FOOTER_MENU),driver);
+        waitUntilElementToBeClickableByXpath(PRE_OWNED_INVENTORY).click();
+        return new ShopPreOwnedInventoryPage(driver);
+    }
+
     public HomePage clickBuildYourOwnButton() {
         waitUntilElementToBeClickableByXpath(BUILD_YOUR_OWN_BUTTON).click();
         return this;
     }
 
     public BuildYourOwnPage clickBuildYourOwnInFooter() {
-        scrollToElement(waitUntilElementToBeClickableByXpath(FOOTER_MENU), driver);
+        scrollToElement(waitUntilElementToBeVisibleByXpath(FOOTER_MENU), driver);
         waitUntilElementToBeClickableByXpath(BUILD_YOUR_OWN).click();
         return new BuildYourOwnPage(driver);
     }

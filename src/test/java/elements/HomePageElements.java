@@ -18,5 +18,5 @@ public class HomePageElements extends AbstractBasePage {
     public static final String BTN_SHOP_BMW_PARTS_AND_ACCESSORIES = "//div[contains(@class,'__nav-holder')]//a[contains(text(),'Accessories')]";
     public static final String FOOTER_MENU = "//div[@class='accordion-base__trigger label-1--bold']";
     public static final String BUILD_YOUR_OWN = "//a[@analytics-event='footer-shopping-tools.build-your-own.build-your-own.link']";
-
+    public static final String PRE_OWNED_INVENTORY = "//a[@analytics-event='footer-shopping-tools.cpo.shop-pre-owned.button']";
 }
