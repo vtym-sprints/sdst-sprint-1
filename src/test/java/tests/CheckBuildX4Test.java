@@ -8,10 +8,6 @@ import pages.HomePage;
 
 public class CheckBuildX4Test extends AbstractBaseTest {
 
-    public CheckBuildX4Test(WebDriver driver) {
-        super(driver);
-    }
-
     @Test
     public void checkBuildX4Test() {
 
@@ -26,17 +22,17 @@ public class CheckBuildX4Test extends AbstractBaseTest {
 
         buildYourOwnPage.modalWindowClose().click();
 
-        buildYourOwnPage.x4AlpineWhiteColor().click();
-        buildYourOwnPage.nextWheelsBtn().click();
-        buildYourOwnPage.nextUpholstery().click();
-        buildYourOwnPage.x4BlackAlcantara().click();
-        buildYourOwnPage.nextTrimBtn().click();
-        buildYourOwnPage.x4SmokeGrey().click();
-        buildYourOwnPage.nextOptionsBtn().click();
-        buildYourOwnPage.nextAccessories().click();
-        buildYourOwnPage.nextSummaryBtn().click();
+        buildYourOwnPage.x4AlpineWhiteColor();
+        buildYourOwnPage.nextWheelsBtn();
+        buildYourOwnPage.nextUpholstery();
+        buildYourOwnPage.x4BlackAlcantara();
+        buildYourOwnPage.nextTrimBtn();
+        buildYourOwnPage.x4SmokeGrey();
+        buildYourOwnPage.nextOptionsBtn();
+        buildYourOwnPage.nextAccessories();
+        buildYourOwnPage.nextSummaryBtn();
 
-        buildYourOwnPage.modalWindowClose().click();
+        buildYourOwnPage.modalWindowClose();
 
         assertTrue(buildYourOwnPage.checkName().getText().contains("X4 M40"));
         assertTrue(buildYourOwnPage.checkPrise().getText().contains("68,100"));
