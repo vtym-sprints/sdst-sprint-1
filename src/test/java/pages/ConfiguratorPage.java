@@ -4,6 +4,8 @@ import elements.ConfiguratorElements;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import java.util.List;
+
 import static base.CommonActions.*;
 import static java.lang.Integer.parseInt;
 
@@ -11,6 +13,10 @@ public class ConfiguratorPage extends ConfiguratorElements {
 
     public ConfiguratorPage(WebDriver driver) {
         super(driver);
+    }
+
+    public WebElement getZipcodeModalCloser() {
+        return waitUntilElementToBeVisibleByXpath(ZIPCODE_MODAL_CLOSER);
     }
 
     public WebElement getCurrentPriceElement() {
@@ -25,8 +31,36 @@ public class ConfiguratorPage extends ConfiguratorElements {
         return waitUntilElementToBeClickableByXpath(BUTTON_CONFIRM_CHANGES);
     }
 
+    public List<WebElement> getOptionsList() {
+        return waitUntilPresenceOfAllElementsByXpath(OPTIONS_LIST);
+    }
+
     public WebElement getButtonNextPage() {
         return waitUntilElementToBeClickableByXpath(BUTTON_NEXT);
+    }
+
+    public WebElement getNextColorButton() {
+        return waitUntilElementToBeClickableByXpath(NEXT_COLOR_BUTTON);
+    }
+
+    public WebElement getNextWheelsButton() {
+        return waitUntilElementToBeClickableByXpath(NEXT_WHEELS_BUTTON);
+    }
+
+    public WebElement getNextUpholsteryButton() {
+        return waitUntilElementToBeClickableByXpath(NEXT_UPHOLSERY_BUTTON);
+    }
+
+    public WebElement getNextTrimButton() {
+        return waitUntilElementToBeClickableByXpath(NEXT_TRIM_BUTTON);
+    }
+
+    public WebElement getNextOptionsButton() {
+        return waitUntilElementToBeClickableByXpath(NEXT_OPTIONS_BUTTON);
+    }
+
+    public WebElement getNextSummaryButton() {
+        return waitUntilElementToBeClickableByXpath(NEXT_SUMMARY_BUTTON);
     }
 
     public WebElement getLookMSportElement() {
@@ -53,10 +87,6 @@ public class ConfiguratorPage extends ConfiguratorElements {
         return waitUntilElementToBeVisibleByXpath(BUTTON_SELECT_EXECUTIVE_PACKAGE);
     }
 
-    public WebElement getExecutivePackageAllFeaturesElement() {
-        return waitUntilElementToBeVisibleByXpath(BUTTON_SELECT_EXECUTIVE_PACKAGE_FEATURES);
-    }
-
     public WebElement getButtonAddToBuild() {
         return waitUntilElementToBeVisibleByXpath(BUTTON_ADD_TO_BUILD);
     }
@@ -77,24 +107,49 @@ public class ConfiguratorPage extends ConfiguratorElements {
         return waitUntilElementToBeVisibleByXpath(ESTIMATED_PRICE);
     }
 
+    public ConfiguratorPage closeZipcodeModal() {
+        getZipcodeModalCloser().click();
+        return this;
+    }
+
     public ConfiguratorPage clickConfirmChangesButton() {
         getButtonConfirmChanges().click();
         return this;
     }
 
-    public ConfiguratorPage clickButtonNextPage() {
+    public ConfiguratorPage clickNextColorButton() {
+        getNextColorButton().click();
+        return this;
+    }
+
+    public ConfiguratorPage clickNextWheelsButton() {
         try {
-            getButtonNextPage().click();
+            getNextWheelsButton().click();
             return this;
         } catch (Exception e) {
             clickConfirmChangesButton();
         }
-        getButtonNextPage().click();
+        getNextWheelsButton().click();
         return this;
     }
 
-    public ConfiguratorPage regularClickButtonNextPage() {
-        getButtonNextPage().click();
+    public ConfiguratorPage clickNextUpholsteryButton() {
+        getNextUpholsteryButton().click();
+        return this;
+    }
+
+    public ConfiguratorPage clickNextTrimButton() {
+        getNextTrimButton().click();
+        return this;
+    }
+
+    public ConfiguratorPage clickNextOptionsButton() {
+        getNextOptionsButton().click();
+        return this;
+    }
+
+    public ConfiguratorPage clickNextSummaryButton() {
+        getNextSummaryButton().click();
         return this;
     }
 
@@ -128,38 +183,33 @@ public class ConfiguratorPage extends ConfiguratorElements {
     }
 
     public int setColorAventurinRedMetallic() {
-        int priceTag;
-
         moveCursor(getColorAlpineWhiteElement(), driver);
         scrollToElement(getColorAventurinRedMetallicElement(), driver);
-        priceTag = getColorAventurinRedMetallicPrice();
+        int priceTag = getColorAventurinRedMetallicPrice();
         jsClick(getColorAventurinRedMetallicElement(), driver);
         return priceTag;
     }
 
     public int setWheels20MYSpokeBiColorJetBlack() {
-        int priceTag;
-
         moveCursor(getWheels18DoubleSpokeBurnishedOrbitGreyElement(), driver);
         scrollToElement(getWheels20MYSpokeBiColorJetBlackElement(), driver);
-        priceTag = getWheels20MYSpokeBiColorJetBlackPrice();
+        int priceTag = getWheels20MYSpokeBiColorJetBlackPrice();
         jsClick(getWheels20MYSpokeBiColorJetBlackElement(), driver);
         return priceTag;
     }
 
     public int setExecutivePackage() {
-        int priceTag;
-
-        scrollToElement(getExecutivePackageAllFeaturesElement(), driver);
-        getButtonSelectExecutivePackage().click();
+        scrollToElement(getButtonSelectExecutivePackage(), driver);
+        jsClick(getButtonSelectExecutivePackage(), driver);
         getButtonAddToBuild().click();
-        priceTag = getSelectionPriceChange();
+        int priceTag = getSelectionPriceChange();
         getButtonConfirmChanges().click();
         return priceTag;
     }
 
     public int setDrivingAssistanceProfessionalPackage() {
-        getButtonDrivingAssistanceProfessionalPackageInfo().click();
+        scrollToElement(getButtonDrivingAssistanceProfessionalPackageInfo(), driver);
+        jsClick(getButtonDrivingAssistanceProfessionalPackageInfo(), driver);
         getButtonAddToBuild().click();
         getButtonBackToBuild().click();
         return getDrivingAssistanceProfessionalPackagePrice();
