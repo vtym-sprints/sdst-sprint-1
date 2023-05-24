@@ -160,4 +160,20 @@ public class BuildYourOwnPage extends BuildYourOwnElements {
         waitUntilElementToBeClickableByXpath(XM_SELECT_BUILD).click();
         return this;
     }
+
+    public BuildYourOwnPage pressAllElectricBtn() {
+        waitUntilElementToBeClickableByXpath(ALL_ELECTRIC_BTN).click();
+        return this;
+    }
+
+    public BuildYourOwnPage selectBmwIX() {
+        waitUntilElementToBeClickableByXpath(SELECT_BMW_IX).click();
+        return this;
+    }
+
+    public BuildYourOwnPage pressBuildYoursBtn() {
+        waitUntilElementToBeClickableByXpath(BUILD_YOURS_BTN).click();
+        return this;
+    }
+
 }

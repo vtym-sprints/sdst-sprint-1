@@ -42,4 +42,7 @@ public class BuildYourOwnElements extends AbstractBasePage {
     public static final String XM_WHITE_COLOR = "//div[contains(text(), 'White')]";
     public static final String XM_ORANGE_LEATHER = "//div[contains(text(), 'Orange')]";
     public static final String XM_SELECT_BUILD = "//a[@href='/build-your-own.html#/studio/23SR']";
+    public static final String ALL_ELECTRIC_BTN = "//div[@class='link-cmp link-cmp__js']/a[contains(text() , 'All-Electric')]";
+    public static final String SELECT_BMW_IX = "//a[@aria-label='Select iX Sports Activity Vehicle']";
+    public static final String BUILD_YOURS_BTN = "//a[contains(text() , 'Build Your Own')]";
 }

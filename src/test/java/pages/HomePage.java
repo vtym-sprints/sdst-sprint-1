@@ -104,4 +104,9 @@ public class HomePage extends HomePageElements {
         getShopPreOwnedInShoppingTabButton().click();
         return this;
     }
+
+    public HomePage clickElectricModelsButton() {
+        waitUntilElementToBeClickableByXpath(PRESS_BMW_ELECTRIC_BTN).click();
+        return this;
+    }
 }
