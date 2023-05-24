@@ -1,8 +1,8 @@
 package pages;
 
+import elements.HomePageElements;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import elements.HomePageElements;
 
 import static base.CommonActions.jsClick;
 import static base.CommonActions.scrollToElement;
@@ -12,8 +12,6 @@ public class HomePage extends HomePageElements {
     public HomePage(WebDriver driver) {
         super(driver);
     }
-
-    private static final String CARS_IN_AVAILABILITY = "//a[@id='button-f4e1544f40'] ";
 
     public WebElement getModelsButton() {
         return waitUntilElementToBeClickableByXpath(MODELS_BUTTON);
@@ -52,6 +50,16 @@ public class HomePage extends HomePageElements {
     public HomePage clickAndSwitchToFollowingPage(String locator) {
         waitUntilElementToBeClickableByXpath(locator).click();
         goToNextTab(2);
+        return this;
+    }
+
+    public BuildYourOwnPage clickBuildYourOwnBtn() {
+        waitUntilElementToBeClickableByXpath(BUILD_YOUR_OWN_BUTTON).click();
+        return new BuildYourOwnPage(driver);
+    }
+
+    public HomePage clickModelsBtn() {
+        waitUntilElementToBeClickableByXpath(MODELS_BTN).click();
         return this;
     }
 
