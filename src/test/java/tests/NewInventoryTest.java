@@ -6,8 +6,6 @@ import pages.HomePage;
 import pages.NewInventoryPage;
 import pages.ZipCodePage;
 
-import static base.CommonActions.replacePrice;
-import static java.lang.Integer.parseInt;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class NewInventoryTest extends AbstractBaseTest {
@@ -29,7 +27,7 @@ public class NewInventoryTest extends AbstractBaseTest {
         newInventoryPage.setPriceFilterMin60k();
 
         newInventoryPage.getCardsPricesList().forEach(price -> {
-            assertThat(parseInt(replacePrice(price))).isGreaterThanOrEqualTo(60000);
+            assertThat(price).isGreaterThanOrEqualTo(60000);
         });
     }
 }
