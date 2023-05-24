@@ -18,6 +18,30 @@ public class ShopPreOwnedInventoryPage extends ShopPreOwnedInventoryElements {
         super(driver);
     }
 
+    public WebElement getModelYearFilterContainer() {
+        return waitUntilElementToBeClickableByXpath(FILTER_MODEL_YEAR_CONTAINER);
+    }
+
+    public WebElement getModelYearFilterMaxLister() {
+        return waitUntilElementToBeClickableByXpath(MAX_MODEL_YEAR_LISTER);
+    }
+
+    public WebElement getModelYearFilterMax2015() {
+        return waitUntilElementToBeClickableByXpath(MAX_MODEL_YEAR_2015);
+    }
+
+    public List<WebElement> getCardsNamesElementsList() {
+        return waitUntilPresenceOfAllElementsByXpath(CARDS_NAMES_LIST);
+    }
+
+    public List<Integer> getCardsModelYearsList() {
+        List<Integer> outputList = new ArrayList<>();
+        getCardsNamesElementsList().forEach(element -> {
+            outputList.add(parseInt(element.getText().substring(0, 4)));
+        });
+        return outputList;
+    }
+
     public ShopPreOwnedInventoryPage chosePreOwned() {
         waitUntilElementToBeClickableByXpath(PRE_OWNED_CB).click();
         return new ShopPreOwnedInventoryPage(driver);
@@ -27,6 +51,15 @@ public class ShopPreOwnedInventoryPage extends ShopPreOwnedInventoryElements {
         var bodyStyleFilter = waitUntilElementToBeClickableByXpath(FILTER_BODY_STYLE_BTN);
         scrollToElement(bodyStyleFilter, driver);
         bodyStyleFilter.click();
+        return this;
+    }
+
+    public ShopPreOwnedInventoryPage setModelYearFilterMax2015() {
+        getCardsNamesElementsList();
+        getModelYearFilterContainer().click();
+        getModelYearFilterMaxLister().click();
+        getModelYearFilterMax2015().click();
+        isTillLoader();
         return this;
     }
 

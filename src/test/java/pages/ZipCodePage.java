@@ -15,4 +15,10 @@ public class ZipCodePage extends ZipCodeElements {
         waitUntilElementToBeClickableByXpath(SELECT_ZIP_BTN).click();
         return new ShopPreOwnedInventoryPage(driver);
     }
+
+    public ShopPreOwnedInventoryPage chooseZipCodeWithNoDealerPick(String zip){
+        waitUntilPresenceOfElementByXpath(ZIP_INPUT_FIELD).sendKeys(zip);
+        waitUntilElementToBeClickableByXpath(SHOP_NOW_BTN).click();
+        return new ShopPreOwnedInventoryPage(driver);
+    }
 }

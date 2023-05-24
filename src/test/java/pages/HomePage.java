@@ -23,8 +23,20 @@ public class HomePage extends HomePageElements {
         return waitUntilElementToBeClickableByXpath(CARS_IN_AVAILABILITY);
     }
 
+    public WebElement getShoppingButton() {
+        return waitUntilElementToBeClickableByXpath(SHOPPING_BUTTON);
+    }
+
     public WebElement getShopInventoryButton() {
         return waitUntilElementToBeClickableByXpath(SHOP_INVENTORY_BUTTON);
+    }
+
+    public WebElement getShoppingZipCodeField() {
+        return waitUntilElementToBeVisibleByXpath(SHOPPING_ZIP_CODE_FIELD);
+    }
+
+    private WebElement getShopPreOwnedInShoppingTabButton() {
+        return waitUntilElementToBeClickableByXpath(SHOP_PRE_OWNED_BUTTON_IN_SHOPPING_TAB);
     }
 
     public HomePage dismissPopup() {
@@ -49,8 +61,8 @@ public class HomePage extends HomePageElements {
         return this;
     }
 
-    public ShopPreOwnedInventoryPage clickPreOwnedInventory(){
-        scrollToElement(waitUntilElementToBeClickableByXpath(FOOTER_MENU),driver);
+    public ShopPreOwnedInventoryPage clickPreOwnedInventory() {
+        scrollToElement(waitUntilElementToBeClickableByXpath(FOOTER_MENU), driver);
         waitUntilElementToBeClickableByXpath(PRE_OWNED_INVENTORY).click();
         return new ShopPreOwnedInventoryPage(driver);
     }
@@ -65,8 +77,23 @@ public class HomePage extends HomePageElements {
         return this;
     }
 
+    public HomePage clickShoppingButton() {
+        getShoppingButton().click();
+        return this;
+    }
+
     public HomePage clickShopInventoryButton() {
         getShopInventoryButton().click();
+        return this;
+    }
+
+    public HomePage setZipCode(String zipCode) {
+        getShoppingZipCodeField().sendKeys(zipCode);
+        return this;
+    }
+
+    public HomePage clickShopPreOwnedButtonInShoppingTab() {
+        getShopPreOwnedInShoppingTabButton().click();
         return this;
     }
 }

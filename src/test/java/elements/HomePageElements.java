@@ -20,5 +20,8 @@ public class HomePageElements extends AbstractBasePage {
     public static final String GLOBAL_POPUP_DISMISS_BTN_SEL = "//button[contains(text(), 'Dismiss')]";
     public static final String MODELS_BUTTON = "//button[@analytics-event='topnav.menu.models-flyout.link']";
     public static final String BUILD_YOUR_OWN_BUTTON = "//a[@analytics-event='topnav.byo.byo.link']";
+    protected static final String SHOPPING_BUTTON = "//button[@name='Shopping Flyout']";
     protected static final String SHOP_INVENTORY_BUTTON = "//a[@title='Shop Inventory']";
+    protected static final String SHOPPING_ZIP_CODE_FIELD = "//input[@id='zip_code']";
+    protected static final String SHOP_PRE_OWNED_BUTTON_IN_SHOPPING_TAB = "//button[@name='zip_btn_secondary']";
 }
