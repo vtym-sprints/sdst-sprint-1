@@ -13,7 +13,7 @@ public class NewInventoryPage extends NewInventoryElements {
     }
 
     public WebElement getPriceFilterContainer() {
-        return waitUntilElementToBeClickableByXpath(PRICE_FILTER_CONTAINER);
+        return waitUntilElementToBeClickableByXpath(FILTER_PRICE_CONTAINER);
     }
 
     public WebElement getPriceFilterMinLister() {
