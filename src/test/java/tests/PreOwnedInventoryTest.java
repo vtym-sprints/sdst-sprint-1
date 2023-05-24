@@ -65,4 +65,25 @@ public class PreOwnedInventoryTest extends AbstractBaseTest {
                             .isBetween(minPrice, maxPrice);
                 });
     }
+
+    @Test
+    public void checkFilterByModelYear() {
+        HomePage homePage = new HomePage(driver);
+        ZipCodePage zipCodePage = new ZipCodePage(driver);
+        ShopPreOwnedInventoryPage shopPreOwnedInventoryPage = new ShopPreOwnedInventoryPage(driver);
+
+        homePage
+                .dismissPopup()
+                .clickShoppingButton()
+                .setZipCode(zipCode)
+                .clickShopPreOwnedButtonInShoppingTab();
+
+        zipCodePage.chooseZipCodeWithNoDealerPick(zipCode);
+
+        shopPreOwnedInventoryPage
+                .setModelYearFilterMax2015()
+                .getCardsModelYearsList().forEach(year -> {
+                    assertThat(year).isLessThanOrEqualTo(2015);
+                });
+    }
 }

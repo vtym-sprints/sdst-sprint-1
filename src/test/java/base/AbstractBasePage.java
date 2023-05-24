@@ -62,4 +62,3 @@ abstract public class AbstractBasePage {
         sleep(100);
     }
 }
-
