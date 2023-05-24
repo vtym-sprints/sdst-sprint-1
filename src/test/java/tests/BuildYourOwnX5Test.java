@@ -11,7 +11,6 @@ public class BuildYourOwnX5Test extends AbstractBaseTest {
 
     @Test
     public void checkCustomizeX5M() {
-
         BuildYourOwnPage buildYourOwnPage = new BuildYourOwnPage(driver);
         HomePage homePage = new HomePage(driver);
 

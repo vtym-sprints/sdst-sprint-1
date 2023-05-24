@@ -7,11 +7,10 @@ import pages.HomePage;
 
 import static org.testng.Assert.assertTrue;
 
-public class CheckModelsFieldTest extends AbstractBaseTest {
+public class CheckModelsBtnTest extends AbstractBaseTest {
 
     @Test
     public void checkModelsField() {
-
         HomePage homePage = new HomePage(driver);
         BuildYourOwnPage buildYourOwnPage = new BuildYourOwnPage(driver);
 

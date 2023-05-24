@@ -9,8 +9,6 @@ import static base.CommonActions.scrollToElement;
 
 public class HomePage extends HomePageElements {
 
-    private static final String CARS_IN_AVAILABILITY = "//a[@id='button-f4e1544f40'] ";
-
     public HomePage(WebDriver driver) {
         super(driver);
     }
