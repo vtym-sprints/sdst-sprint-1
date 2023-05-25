@@ -1,6 +1,7 @@
 package pages;
 
 import elements.HomePageElements;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -31,6 +32,10 @@ public class HomePage extends HomePageElements {
 
     public WebElement getShoppingZipCodeField() {
         return waitUntilElementToBeVisibleByXpath(SHOPPING_ZIP_CODE_FIELD);
+    }
+
+    private WebElement getShopNewInShoppingTabButton() {
+        return waitUntilElementToBeClickableByXpath(SHOP_NEW_BUTTON_IN_SHOPPING_TAB);
     }
 
     private WebElement getShopPreOwnedInShoppingTabButton() {
@@ -69,6 +74,31 @@ public class HomePage extends HomePageElements {
         return this;
     }
 
+    public HomePage clickButton(String nameButtonHeader) {
+        waitUntilElementToBeClickableByXpath(nameButtonHeader).click();
+        return this;
+    }
+
+    public HomePage sendKeysInFieldDealerNameOrZipCode(String nameOrZip) {
+        waitUntilElementToBeClickableByXpath(FIELD_INPUT_ZIP_CODE_IN_SHOPPING).sendKeys(nameOrZip + Keys.ENTER);
+        return this;
+    }
+
+    public HomePage selectDealerByNumber(String numberDealer) {
+        waitUntilElementToBeClickableByXpath(String.format(BUTTON_SELECT_DEALER_BY_NUMBER, numberDealer)).click();
+        return this;
+    }
+
+    public HomePage closeRightPopUp() {
+        waitUntilElementToBeVisibleByXpath(CLOSE_RIGHT_POP_UP).click();
+        return this;
+    }
+
+    public HomePage sendKeysZipCode(String zipCode) {
+        waitUntilElementToBeClickableByXpath(SENDKEYS_ZIP_CODE).sendKeys(zipCode + Keys.ENTER);
+        return this;
+    }
+
     public ShopPreOwnedInventoryPage clickPreOwnedInventory() {
         scrollToElement(waitUntilElementToBeClickableByXpath(FOOTER_MENU), driver);
         waitUntilElementToBeClickableByXpath(PRE_OWNED_INVENTORY).click();
@@ -103,6 +133,11 @@ public class HomePage extends HomePageElements {
 
     public HomePage setZipCode(String zipCode) {
         getShoppingZipCodeField().sendKeys(zipCode);
+        return this;
+    }
+
+    public HomePage clickShopNewButtonInShoppingTab() {
+        getShopNewInShoppingTabButton().click();
         return this;
     }
 
