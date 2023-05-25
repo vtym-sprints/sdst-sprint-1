@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static elements.HomePageElements.*;
+import static org.testng.Assert.*;
 
 public class CheckingFilterInTheShopping extends AbstractBaseTest {
     private static final String ZIP_CODE = "11222";
@@ -18,6 +19,9 @@ public class CheckingFilterInTheShopping extends AbstractBaseTest {
     @Test
     public void checkingFilterInTheShopping() {
         ShoppingPage shoppingPage = new ShoppingPage(driver);
+        List<Integer> numbers = new ArrayList<>();
+        int min = 50000;
+        int max = 79999;
 
         new HomePage(driver)
                 .clickButton(BTN_SHOPPING_ON_HEADER)
@@ -43,30 +47,19 @@ public class CheckingFilterInTheShopping extends AbstractBaseTest {
                 .clickBoxMinOrMaxPrice("2")
                 .clickPriceInMinAndMax("2024");
 
-        List<Integer> numbers = new ArrayList<>();
-
         for (WebElement element : shoppingPage.allPriceOnShoppingPage()) {
             String text = element.getText().replaceAll("[\\$,]", "");
             int number = Integer.parseInt(text);
             numbers.add(number);
         }
 
-        int min = 50000;
-        int max = 79999;
-
-        boolean allInRange = true;
-
         for (int number : numbers) {
-            if (number < min || number > max) {
-                allInRange = false;
-                break;
-            }
+            assertTrue(min <= number && number <= max);
         }
 
-        Assert.assertTrue(allInRange);
-        Assert.assertTrue(shoppingPage.getListNameParameterProducts().stream()
+        assertTrue(shoppingPage.getListNameParameterProducts().stream()
                 .allMatch(el -> el.getText().contains("X3") || el.getText().contains("X5")));
-        Assert.assertTrue(shoppingPage.getListProductYears().stream()
+        assertTrue(shoppingPage.getListProductYears().stream()
                 .allMatch(el -> el.getText().contains("2023") || el.getText().contains("2024")));
     }
 }

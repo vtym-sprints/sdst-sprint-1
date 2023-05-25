@@ -96,6 +96,8 @@ public class HomePage extends HomePageElements {
 
     public HomePage sendKeysZipCode(String zipCode) {
         waitUntilElementToBeClickableByXpath(SENDKEYS_ZIP_CODE).sendKeys(zipCode + Keys.ENTER);
+        return this;
+    }
 
     public ShopPreOwnedInventoryPage clickPreOwnedInventory() {
         scrollToElement(waitUntilElementToBeClickableByXpath(FOOTER_MENU), driver);
