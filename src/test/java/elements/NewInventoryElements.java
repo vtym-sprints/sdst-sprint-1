@@ -15,5 +15,8 @@ public class NewInventoryElements extends AbstractBasePage {
     protected static final String FILTER_PRICE_CONTAINER = "//button[@aria-controls='price']";
     protected static final String MIN_PRICE_LISTER = "//div[preceding-sibling::select[@id='select_minprice']]";
     protected static final String MIN_PRICE_60K = "//span[text()='$60,000']/..";
+    protected static final String CARDS_SERIES_LIST = "//div[@class='label-1--bold']";
+    protected static final String CARDS_MODEL_LIST =
+            "//div[contains(@class, 'content-3 new-vehicle-card_modeldescription')]";
     protected static final String CARDS_PRICES_LIST = "//div[@class='content-2']";
 }

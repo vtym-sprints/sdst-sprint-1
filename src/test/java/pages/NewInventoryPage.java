@@ -36,8 +36,32 @@ public class NewInventoryPage extends NewInventoryElements {
         return waitUntilElementToBeClickableByXpath(MIN_PRICE_60K);
     }
 
+    public List<WebElement> getCardsSeriesElementsList() {
+        return waitUntilPresenceOfAllElementsByXpath(CARDS_SERIES_LIST);
+    }
+
+    public List<WebElement> getCardsModelsElementsList() {
+        return waitUntilPresenceOfAllElementsByXpath(CARDS_MODEL_LIST);
+    }
+
     public List<WebElement> getCardsPricesElementsList() {
         return waitUntilPresenceOfAllElementsByXpath(CARDS_PRICES_LIST);
+    }
+
+    public List<String> getCardsSeriesList() {
+        List<String> outputList = new ArrayList<>();
+        getCardsSeriesElementsList().forEach(element -> {
+            outputList.add(element.getText());
+        });
+        return outputList;
+    }
+
+    public List<String> getCardsModelsList() {
+        List<String> outputList = new ArrayList<>();
+        getCardsModelsElementsList().forEach(element -> {
+            outputList.add(element.getText());
+        });
+        return outputList;
     }
 
     public List<Integer> getCardsPricesList() {
@@ -63,6 +87,10 @@ public class NewInventoryPage extends NewInventoryElements {
         getSortingRulePriceAscending().click();
         getCardsPricesElementsList();
         return this;
+    }
+
+    public void openFirstItemCardPage() {
+        getCardsSeriesElementsList().get(0).click();
     }
 
     public boolean areCardsSortedByPriceAscending() {
