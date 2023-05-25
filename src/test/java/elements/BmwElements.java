@@ -31,5 +31,12 @@ public class BmwElements extends AbstractBasePage {
     protected final static String SCROLL_ADD_TO_CART_BUTTON = "//span[@id='SummarySubTotal']";
     protected final static String ADD_TO_CART_BUTTON = "//button[@id='btnAddToCart']";
     protected final static String TEXT_BMW_WHEEL = "//h3[@id='hFlyoutName_BMW©Electronic©Performance©Steering©Wheel'][contains(text(),'BMW Electronic Performance Steering Wheel ')]";
+    protected final static String NEXT_WHEELS_BUTTON = "//a[contains(text(),'Next / Wheels')]";
+    protected final static String NEXT_UPHOLSTERY_BUTTON = "//a[contains(text(),'Next / Upholstery')]";
+    protected final static String NEXT_TRIM_BUTTON = "//a[contains(text(),'Next / Trim')]";
+    protected final static String NEXT_OPTIONS_BUTTON = "//a[contains(text(),'Next / Options')]";
+    protected final static String SUM_CARS = "//span[contains(text(),'MSRP as built')]";
+    protected final static String NEXT_SUMMARY_BUTTON = "//a[contains(text(),'Next / Summary')]";
+    protected final static String TEXT_M8_COMPETITION = "//h1[contains(text(),'M8 Competition Coupe')]";
 
 }

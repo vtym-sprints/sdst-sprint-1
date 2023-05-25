@@ -16,8 +16,8 @@ import static org.openqa.selenium.support.ui.ExpectedConditions.*;
 
 abstract public class AbstractBasePage {
     protected WebDriver driver;
-    protected WebDriverWait wait;
-    private int BASE_WAIT = 7000;
+    protected static WebDriverWait wait;
+    private int BASE_WAIT = 15000;
     public AbstractBasePage(WebDriver driver) {
         this.driver = driver;
         wait = new WebDriverWait(driver, ofMillis(BASE_WAIT));
@@ -27,7 +27,7 @@ abstract public class AbstractBasePage {
         return wait.until(visibilityOfElementLocated(By.xpath(locator)));
     }
 
-    protected WebElement waitUntilElementToBeClickableByXpath(String locator) {
+    protected static WebElement waitUntilElementToBeClickableByXpath(String locator) {
         return wait.until(elementToBeClickable(By.xpath(locator)));
 
     }

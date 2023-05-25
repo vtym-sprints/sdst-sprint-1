@@ -42,5 +42,9 @@ public class HomePage extends HomePageElements {
         waitUntilElementToBeClickableByXpath(BUILD_YOUR_OWN_BUTTON).click();
         return this;
     }
+    public HomePage clickCloseZipCodeButton() {
+        waitUntilElementToBeClickableByXpath(CLOSE_ZIP_CODE_BUTTON).click();
+        return this;
+    }
 
 }
