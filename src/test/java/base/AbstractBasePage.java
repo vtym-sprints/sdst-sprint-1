@@ -15,7 +15,7 @@ import static org.openqa.selenium.support.ui.ExpectedConditions.*;
 abstract public class AbstractBasePage {
     protected WebDriver driver;
     protected WebDriverWait wait;
-    private int BASE_WAIT = 5000;
+    private int BASE_WAIT = 15000;
 
     public AbstractBasePage(WebDriver driver) {
         this.driver = driver;
@@ -36,6 +36,11 @@ abstract public class AbstractBasePage {
 
     protected List<WebElement> waitUntilPresenceOfAllElementsByXpath(String locator) {
         return wait.until(presenceOfAllElementsLocatedBy(By.xpath(locator)));
+    }
+
+    protected List<WebElement> waitUntilElementsToBeVisibleByXpath(String locator) {
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath(locator)));
+        return driver.findElements(By.xpath(locator));
     }
 
     public void goToNextTab(int tabNumber) {
