@@ -9,7 +9,7 @@ import pages.NewInventoryPage;
 import pages.ZipCodePage;
 
 public class ItemCardTest extends AbstractBaseTest {
-    private final String zipCode = "90001";
+    private final String ZIP_CODE = "90001";
 
     @Test
     public void checkCorrectnessOfCardInfo() {
@@ -21,10 +21,10 @@ public class ItemCardTest extends AbstractBaseTest {
         homePage
                 .dismissPopup()
                 .clickShoppingButton()
-                .setZipCode(zipCode)
+                .setZipCode(ZIP_CODE)
                 .clickShopNewButtonInShoppingTab();
 
-        zipCodePage.chooseZipCodeWithNoDealerPick(zipCode);
+        zipCodePage.chooseZipCodeWithNoDealerPick(ZIP_CODE);
 
         String itemSeriesInList = newInventoryPage.getCardsSeriesList().get(0);
         String itemModelInList = newInventoryPage.getCardsModelsList().get(0);
