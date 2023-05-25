@@ -13,12 +13,11 @@ public class CheckBuildX4Test extends AbstractBaseTest {
     public void checkBuildX4Test() {
 
         HomePage homePage = new HomePage(driver);
+        BuildYourOwnPage buildYourOwnPage = new BuildYourOwnPage(driver);
 
         homePage
                 .clickModelsBtn()
                 .clickBuildYourOwnBtn();
-
-        BuildYourOwnPage buildYourOwnPage = new BuildYourOwnPage(driver);
 
         buildYourOwnPage
                 .selectX4Coupe()
