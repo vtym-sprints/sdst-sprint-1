@@ -4,6 +4,7 @@ import base.AbstractBasePage;
 import org.openqa.selenium.WebDriver;
 
 public class ShopBmwUsaElements extends AbstractBasePage {
+
     public ShopBmwUsaElements(WebDriver driver) {
         super(driver);
     }

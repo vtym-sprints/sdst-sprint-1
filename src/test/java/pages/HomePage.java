@@ -89,6 +89,12 @@ public class HomePage extends HomePageElements {
         return this;
     }
 
+    public BuildYourOwnPage clickBuildYourOwnInFooter() {
+        scrollToElement(waitUntilElementToBeVisibleByXpath(FOOTER_MENU), driver);
+        waitUntilElementToBeClickableByXpath(BUILD_YOUR_OWN).click();
+        return new BuildYourOwnPage(driver);
+    }
+
     public HomePage clickShoppingButton() {
         getShoppingButton().click();
         return this;
