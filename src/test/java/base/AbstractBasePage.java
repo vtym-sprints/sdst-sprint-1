@@ -46,6 +46,11 @@ abstract public class AbstractBasePage {
         return wait.until(presenceOfAllElementsLocatedBy(By.xpath(locator)));
     }
 
+    protected List<WebElement> waitUntilElementsToBeVisibleByXpath(String locator) {
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath(locator)));
+        return driver.findElements(By.xpath(locator));
+    }
+
     public void goToNextTab(int tabNumber) {
         waitUntilNumberOfTabToBe(tabNumber);
         ArrayList<String> tabs = new ArrayList<>(driver.getWindowHandles());
