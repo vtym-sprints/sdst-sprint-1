@@ -11,7 +11,6 @@ public class CheckElectricModelsButton extends AbstractBaseTest {
 
     @Test
     public void CheckElectricModelsButton() {
-
         HomePage homePage =new HomePage(driver);
 
         homePage
