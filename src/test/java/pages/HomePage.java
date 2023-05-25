@@ -105,7 +105,7 @@ public class HomePage extends HomePageElements {
         return this;
     }
 
-    public HomePage clickElectricModelsButton() {
+    public HomePage clickBMWElectricButton() {
         waitUntilElementToBeClickableByXpath(PRESS_BMW_ELECTRIC_BTN).click();
         return this;
     }

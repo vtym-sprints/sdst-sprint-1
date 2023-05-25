@@ -175,5 +175,4 @@ public class BuildYourOwnPage extends BuildYourOwnElements {
         waitUntilElementToBeClickableByXpath(BUILD_YOURS_BTN).click();
         return this;
     }
-
 }

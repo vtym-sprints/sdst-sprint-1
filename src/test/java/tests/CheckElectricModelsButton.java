@@ -14,8 +14,9 @@ public class CheckElectricModelsButton extends AbstractBaseTest {
 
         HomePage homePage =new HomePage(driver);
 
-        homePage.dismissPopup()
-                .clickElectricModelsButton();
+        homePage
+                .dismissPopup()
+                .clickBMWElectricButton();
 
         BuildYourOwnPage buildYourOwnPage=new BuildYourOwnPage(driver);
 
