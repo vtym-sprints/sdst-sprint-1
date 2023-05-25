@@ -297,4 +297,19 @@ public class BuildYourOwnPage extends BuildYourOwnElements {
             return false;
         }
     }
+
+    public BuildYourOwnPage pressAllElectricBtn() {
+        waitUntilElementToBeClickableByXpath(ALL_ELECTRIC_BTN).click();
+        return this;
+    }
+
+    public BuildYourOwnPage selectBmwIX() {
+        waitUntilElementToBeClickableByXpath(SELECT_BMW_IX).click();
+        return this;
+    }
+
+    public BuildYourOwnPage pressBuildYoursBtn() {
+        waitUntilElementToBeClickableByXpath(BUILD_YOURS_BTN).click();
+        return this;
+    }
 }
