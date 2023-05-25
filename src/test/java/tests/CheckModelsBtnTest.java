@@ -7,33 +7,31 @@ import pages.HomePage;
 
 import static org.testng.Assert.assertTrue;
 
-public class CheckBuildX4Test extends AbstractBaseTest {
+public class CheckModelsBtnTest extends AbstractBaseTest {
 
     @Test
-    public void checkBuildX4Test() {
-
+    public void checkModelsField() {
         HomePage homePage = new HomePage(driver);
-
-        homePage
-                .clickModelsBtn()
-                .clickBuildYourOwnBtn();
-
         BuildYourOwnPage buildYourOwnPage = new BuildYourOwnPage(driver);
 
+        homePage.dismissPopup()
+                .clickModelsBtn();
+
         buildYourOwnPage
-                .selectX4Coupe()
-                .selectx4MSports()
-                .closeModalZip()
-                .selectX4AlpineWhiteColor()
+                .choosingXM()
+                .pressXMBuildOwn()
+                .selectXMBuild()
+                .closeModalWindow()
                 .pressNextWheelsBtn()
                 .pressNextUpholstery()
+                .selectXMOrangeLeather()
                 .pressNextTrimBtn()
-                .selectX4SmokeGrey()
                 .pressNextOptionsBtn()
                 .pressNextAccessories()
                 .pressNextSummaryBtn()
                 .closeModalWindow();
 
-        assertTrue(buildYourOwnPage.getName().contains("X4 M40"));
+        assertTrue(buildYourOwnPage.getName().contains("BMW XM"));
+        assertTrue(buildYourOwnPage.getPrice().contains("160,500"));
     }
 }

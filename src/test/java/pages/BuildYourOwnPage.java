@@ -39,6 +39,16 @@ public class BuildYourOwnPage extends BuildYourOwnElements {
         return this;
     }
 
+    public BuildYourOwnPage selectLeatherColorCognac() {
+        waitUntilElementToBeClickableByXpath(LEATHER_COLOR_COGNAC).click();
+        return this;
+    }
+
+    public BuildYourOwnPage selectX4BlackAlcantara() {
+        waitUntilElementToBeClickableByXpath(X4_BLACK_ALCANTARA).click();
+        return this;
+    }
+
     public BuildYourOwnPage selectX4SmokeGrey() {
         waitUntilElementToBeClickableByXpath(X4_SMOKE_GREY).click();
         return this;
@@ -64,6 +74,10 @@ public class BuildYourOwnPage extends BuildYourOwnElements {
         return this;
     }
 
+    public String getTotalPrice() {
+        return waitUntilElementToBeClickableByXpath(TOTAL_PRICE).getText();
+    }
+
     public BuildYourOwnPage closeModalWindow() {
         waitUntilElementToBeVisibleByXpath(MODAL_WINDOW_CLOSE_BTN).click();
         return this;
@@ -80,11 +94,11 @@ public class BuildYourOwnPage extends BuildYourOwnElements {
     }
 
     public String getName() {
-        return waitUntilElementToBeClickableByXpath(GET_NAME).getText();
+        return waitUntilElementToBeClickableByXpath(CHECK_NAME).getText();
     }
 
     public String getPrice() {
-        return waitUntilElementToBeClickableByXpath(GET_PRICE).getText();
+        return waitUntilElementToBeClickableByXpath(CHECK_PRICE).getText();
     }
 
     public BuildYourOwnPage selectX4MSports() {
@@ -153,8 +167,7 @@ public class BuildYourOwnPage extends BuildYourOwnElements {
     }
 
     public BuildYourOwnPage selectX4Coupe() {
-        waitUntilElementToBeClickableByXpath(X4_M_COUPE_SELECT).click();
+        waitUntilElementToBeClickableByXpath(X4_MSPORT_SELECT).click();
         return this;
     }
-
 }

@@ -1,5 +1,6 @@
 package base;
 
+import lombok.SneakyThrows;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -9,13 +10,16 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.util.ArrayList;
 import java.util.List;
 
+import static java.lang.Thread.sleep;
 import static java.time.Duration.ofMillis;
 import static org.openqa.selenium.support.ui.ExpectedConditions.*;
 
 abstract public class AbstractBasePage {
+
     protected WebDriver driver;
     protected WebDriverWait wait;
-    private int BASE_WAIT = 5000;
+    private int BASE_WAIT = 15000;
+    private final String CIRCLE_LOADER = "//div[@class='load-indicator_loader_njc5r']";
 
     public AbstractBasePage(WebDriver driver) {
         this.driver = driver;
@@ -24,6 +28,10 @@ abstract public class AbstractBasePage {
 
     protected WebElement waitUntilElementToBeVisibleByXpath(String locator) {
         return wait.until(visibilityOfElementLocated(By.xpath(locator)));
+    }
+
+    protected Boolean waitUntilElementToBeInvisibilityByXpath(String locator) {
+        return wait.until(invisibilityOfElementLocated(By.xpath(locator)));
     }
 
     protected WebElement waitUntilElementToBeClickableByXpath(String locator) {
@@ -46,5 +54,11 @@ abstract public class AbstractBasePage {
 
     public void waitUntilNumberOfTabToBe(int tabNumber) {
         wait.until(ExpectedConditions.numberOfWindowsToBe(tabNumber));
+    }
+
+    @SneakyThrows
+    public void isTillLoader() {
+        waitUntilElementToBeInvisibilityByXpath(CIRCLE_LOADER);
+        sleep(100);
     }
 }
