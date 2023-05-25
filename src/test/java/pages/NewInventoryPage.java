@@ -16,6 +16,14 @@ public class NewInventoryPage extends NewInventoryElements {
         super(driver);
     }
 
+    public WebElement getSortRulesDropdown() {
+        return waitUntilElementToBeClickableByXpath(SORT_RULES_DROPDOWN);
+    }
+
+    public WebElement getSortingRulePriceAscending() {
+        return waitUntilElementToBeClickableByXpath(SORT_RULE_PRICE_ASCENDING);
+    }
+
     public WebElement getPriceFilterContainer() {
         return waitUntilElementToBeClickableByXpath(FILTER_PRICE_CONTAINER);
     }
@@ -47,5 +55,23 @@ public class NewInventoryPage extends NewInventoryElements {
         getPriceFilterMin60k().click();
         isTillLoader();
         return this;
+    }
+
+    public NewInventoryPage setSortingRulePriceAscending() {
+        getCardsPricesElementsList();
+        getSortRulesDropdown().click();
+        getSortingRulePriceAscending().click();
+        getCardsPricesElementsList();
+        return this;
+    }
+
+    public boolean areCardsSortedByPriceAscending() {
+        List<Integer> cardsPricesList = getCardsPricesList();
+        for (int i = 1; i < cardsPricesList.size(); i++) {
+            if (cardsPricesList.get(i) < cardsPricesList.get(i - 1)) {
+                return false;
+            }
+        }
+        return true;
     }
 }

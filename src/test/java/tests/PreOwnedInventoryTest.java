@@ -14,7 +14,7 @@ import static java.lang.Integer.parseInt;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class PreOwnedInventoryTest extends AbstractBaseTest {
-    private final String zipCode = "07003";
+    private final String ZIP_CODE = "07003";
 
     @Test
     public void checkFilteringByBodyStyleAndPrice() {
@@ -26,7 +26,7 @@ public class PreOwnedInventoryTest extends AbstractBaseTest {
                 .dismissPopup()
                 .clickPreOwnedInventory();
 
-        zipCodePage.choseZipCode(zipCode);
+        zipCodePage.choseZipCode(ZIP_CODE);
         shopPreOwnedInventoryPage.chosePreOwned();
 
         assertThat(shopPreOwnedInventoryPage.getFilterText())
@@ -75,10 +75,10 @@ public class PreOwnedInventoryTest extends AbstractBaseTest {
         homePage
                 .dismissPopup()
                 .clickShoppingButton()
-                .setZipCode(zipCode)
+                .setZipCode(ZIP_CODE)
                 .clickShopPreOwnedButtonInShoppingTab();
 
-        zipCodePage.chooseZipCodeWithNoDealerPick(zipCode);
+        zipCodePage.chooseZipCodeWithNoDealerPick(ZIP_CODE);
 
         shopPreOwnedInventoryPage
                 .setModelYearFilterMax2015()

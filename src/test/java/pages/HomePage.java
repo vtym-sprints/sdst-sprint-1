@@ -33,6 +33,10 @@ public class HomePage extends HomePageElements {
         return waitUntilElementToBeVisibleByXpath(SHOPPING_ZIP_CODE_FIELD);
     }
 
+    private WebElement getShopNewInShoppingTabButton() {
+        return waitUntilElementToBeClickableByXpath(SHOP_NEW_BUTTON_IN_SHOPPING_TAB);
+    }
+
     private WebElement getShopPreOwnedInShoppingTabButton() {
         return waitUntilElementToBeClickableByXpath(SHOP_PRE_OWNED_BUTTON_IN_SHOPPING_TAB);
     }
@@ -103,6 +107,11 @@ public class HomePage extends HomePageElements {
 
     public HomePage setZipCode(String zipCode) {
         getShoppingZipCodeField().sendKeys(zipCode);
+        return this;
+    }
+
+    public HomePage clickShopNewButtonInShoppingTab() {
+        getShopNewInShoppingTabButton().click();
         return this;
     }
 
