@@ -26,4 +26,6 @@ public class HomePageElements extends AbstractBasePage {
     protected static final String SHOPPING_ZIP_CODE_FIELD = "//input[@id='zip_code']";
     protected static final String SHOP_PRE_OWNED_BUTTON_IN_SHOPPING_TAB = "//button[@name='zip_btn_secondary']";
     public static final String CARS_IN_AVAILABILITY = "//a[@id='button-f4e1544f40'] ";
+    public static final String ESTIMATE_PAYMENT_IN_FOOTER =
+            "//a[@analytics-event='footer-shopping-tools.payment-estimator.estimate-payment.link']";
 }

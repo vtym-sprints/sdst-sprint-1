@@ -110,4 +110,10 @@ public class HomePage extends HomePageElements {
         getShopPreOwnedInShoppingTabButton().click();
         return this;
     }
+
+    public EstimatePaymentPage clickEstimatePayment(){
+        scrollToElement(waitUntilPresenceOfElementByXpath(FOOTER_MENU),driver);
+        waitUntilElementToBeClickableByXpath(ESTIMATE_PAYMENT_IN_FOOTER).click();
+        return new EstimatePaymentPage(driver);
+    }
 }
