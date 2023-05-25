@@ -10,7 +10,7 @@ import pages.ZipCodePage;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class NewInventoryTest extends AbstractBaseTest {
-    private final String zipCode = "90001";
+    private final String ZIP_CODE = "90001";
 
     @Test
     public void checkPriceFilter() {
@@ -23,7 +23,7 @@ public class NewInventoryTest extends AbstractBaseTest {
                 .clickModelsButton()
                 .clickShopInventoryButton();
 
-        zipCodePage.choseZipCode(zipCode);
+        zipCodePage.choseZipCode(ZIP_CODE);
 
         newInventoryPage.setPriceFilterMin60k();
 
@@ -41,10 +41,10 @@ public class NewInventoryTest extends AbstractBaseTest {
         homePage
                 .dismissPopup()
                 .clickShoppingButton()
-                .setZipCode(zipCode)
+                .setZipCode(ZIP_CODE)
                 .clickShopNewButtonInShoppingTab();
 
-        zipCodePage.chooseZipCodeWithNoDealerPick(zipCode);
+        zipCodePage.chooseZipCodeWithNoDealerPick(ZIP_CODE);
 
         newInventoryPage.setSortingRulePriceAscending();
 
