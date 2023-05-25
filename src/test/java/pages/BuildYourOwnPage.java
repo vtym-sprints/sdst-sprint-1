@@ -82,7 +82,6 @@ public class BuildYourOwnPage extends BuildYourOwnElements {
     }
 
     public BuildYourOwnPage choseUpholstery() {
-        //try {
         scrollToElement(waitUntilPresenceOfElementByXpath(BLACK_UPHOLSTERY), driver);
         waitUntilElementToBeClickableByXpath(BLACK_UPHOLSTERY).click();
         optionPrices.add(getPriceOfChoseOption(PRICE_OF_BLACK_UPHOLSTERY));
