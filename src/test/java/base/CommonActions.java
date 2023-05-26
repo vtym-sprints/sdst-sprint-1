@@ -6,7 +6,6 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.Select;
 
 import java.io.File;
 
@@ -22,11 +21,6 @@ public class CommonActions {
         js.executeScript(jsCommand);
     }
 
-    public static void jsClick(WebElement element, WebDriver driver) {
-        JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
-        jsExecutor.executeScript("arguments[0].click();", element);
-    }
-
     public static void back(WebDriver driver) {
         driver.navigate().back();
     }
@@ -34,6 +28,11 @@ public class CommonActions {
     public static void moveCursor(WebElement element, WebDriver driver) {
         Actions actions = new Actions(driver);
         actions.moveToElement(element).build().perform();
+    }
+
+    public static void jsClick(WebElement element, WebDriver driver) {
+        JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+        jsExecutor.executeScript("arguments[0].click();", element);
     }
 
     public static String replacePrice(WebElement element) {

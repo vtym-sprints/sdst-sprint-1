@@ -1,5 +1,8 @@
 package pages;
 
+import elements.HomePageElements;
+import elements.SearchResultElements;
+import org.openqa.selenium.Keys;
 import elements.BMWConnectedDriveElements;
 import elements.HomePageElements;
 import org.openqa.selenium.Keys;
@@ -46,6 +49,18 @@ public class HomePage extends HomePageElements {
     public HomePage dismissPopup() {
         jsClick(waitUntilPresenceOfElementByXpath(GLOBAL_POPUP_DISMISS_BTN_SEL), driver);
         return this;
+    }
+
+    public HomePage clickSearchBtn() {
+        waitUntilPresenceOfElementByXpath(SEARCH_BTN).click();
+        return this;
+    }
+
+    public SearchResultElements enterSearchInfo(String info) {
+        var searchField = waitUntilElementToBeVisibleByXpath(SEARCH_FIELD);
+        searchField.sendKeys(info);
+        searchField.sendKeys(Keys.ENTER);
+        return new SearchResultPage(driver);
     }
 
     public HomePage clickCarsInAvailability() {
