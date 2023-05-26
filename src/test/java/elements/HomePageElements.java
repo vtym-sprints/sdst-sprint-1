@@ -38,4 +38,6 @@ public class HomePageElements extends AbstractBasePage {
     public static final String BMW_ConnectedDrive = "//a[@analytics-event='footer-the-bmw-difference.bmw-connecteddrive.link']";
     public static final String SEARCH_BTN = "//div[@class='globalnav-primary-search__show-on-large']";
     public static final String SEARCH_FIELD = "//input[@tab-index='2']";
+    public static final String ESTIMATE_PAYMENT_IN_FOOTER =
+            "//a[@analytics-event='footer-shopping-tools.payment-estimator.estimate-payment.link']";
 }

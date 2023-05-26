@@ -10,12 +10,15 @@ import org.openqa.selenium.interactions.Actions;
 import java.io.File;
 
 import static java.lang.Thread.sleep;
+import org.openqa.selenium.support.ui.Select;
 
 public class CommonActions {
 
     public static void scrollToElement(WebElement element, WebDriver driver) {
-        JavascriptExecutor js2 = (JavascriptExecutor) driver;
-        js2.executeScript("arguments[0].scrollIntoView(true);", element);
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        var elementPosition = element.getLocation().getY();
+        var jsCommand = "window.scroll(" + 0 + "," + (elementPosition - (driver.manage().window().getSize().getHeight() / 2)) + ");";
+        js.executeScript(jsCommand);
     }
 
     public static void back(WebDriver driver) {
@@ -34,6 +37,16 @@ public class CommonActions {
 
     public static String replacePrice(WebElement element) {
         return element.getText().replaceAll("[^\\-\\d]", "");
+    }
+
+    public static void selectOptionByValue(WebElement dropdown, String optionValue) {
+        Select select = new Select(dropdown);
+        select.selectByValue(optionValue);
+    }
+
+    public static void scrollToTop(WebDriver driver) {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollTo(0, 0);");
     }
 
     public static String readPdfContent(String fileName) throws Exception {

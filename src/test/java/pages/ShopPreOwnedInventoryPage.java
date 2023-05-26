@@ -59,7 +59,7 @@ public class ShopPreOwnedInventoryPage extends ShopPreOwnedInventoryElements {
         getModelYearFilterContainer().click();
         getModelYearFilterMaxLister().click();
         getModelYearFilterMax2015().click();
-        isTillLoader();
+        waitTillCircleLoaderDisappear();
         return this;
     }
 
