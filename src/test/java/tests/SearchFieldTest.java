@@ -10,7 +10,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class SearchFieldTest extends AbstractBaseTest {
 
-    private String infoForSearch = "electric";
+    private static final String INFO_FOR_Search = "electric";
 
     @Test
     @SneakyThrows
@@ -21,9 +21,9 @@ public class SearchFieldTest extends AbstractBaseTest {
         homePage
                 .dismissPopup()
                 .clickSearchBtn()
-                .enterSearchInfo(infoForSearch);
+                .enterSearchInfo(INFO_FOR_Search);
 
-        var matchingElementCount = searchResultPage.getDetailsFromResearch(infoForSearch);
+        var matchingElementCount = searchResultPage.getDetailsFromResearch(INFO_FOR_Search);
 
         assertThat(matchingElementCount)
                 .as("Search doesn't work correct")
