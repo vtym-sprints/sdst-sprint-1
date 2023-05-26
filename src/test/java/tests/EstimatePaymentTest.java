@@ -8,7 +8,7 @@ import pages.HomePage;
 import static org.testng.Assert.assertTrue;
 
 public class EstimatePaymentTest extends AbstractBaseTest {
-    private String zipCode = "90001";
+    private final String ZIP_CODE = "90001";
 
     @Test
     public void checkEstimatePayment() {
@@ -22,7 +22,7 @@ public class EstimatePaymentTest extends AbstractBaseTest {
         estimatePaymentPage
                 .chose8Series()
                 .chose840iGranCoupe()
-                .enterZIpCode(zipCode)
+                .enterZIpCode(ZIP_CODE)
                 .waitTillVehicleLoaderDisappear();
         estimatePaymentPage
                 .clickEstimatePayments()
