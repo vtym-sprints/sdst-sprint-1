@@ -1,5 +1,6 @@
 package pages;
 
+import elements.BMWConnectedDriveElements;
 import elements.HomePageElements;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -144,6 +145,12 @@ public class HomePage extends HomePageElements {
     public HomePage clickShopPreOwnedButtonInShoppingTab() {
         getShopPreOwnedInShoppingTabButton().click();
         return this;
+    }
+
+    public BMWConnectedDrivePage goToBMWConnectedDrivePage(){
+        scrollToElement(waitUntilPresenceOfElementByXpath(FOOTER_MENU),driver);
+        waitUntilElementToBeClickableByXpath(BMW_ConnectedDrive).click();
+        return new BMWConnectedDrivePage(driver);
     }
 
     public EstimatePaymentPage clickEstimatePayment(){
