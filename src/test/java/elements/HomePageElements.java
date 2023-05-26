@@ -33,4 +33,5 @@ public class HomePageElements extends AbstractBasePage {
     protected static final String SHOP_NEW_BUTTON_IN_SHOPPING_TAB = "//button[@name='zip_btn']";
     protected static final String SHOP_PRE_OWNED_BUTTON_IN_SHOPPING_TAB = "//button[@name='zip_btn_secondary']";
     public static final String CARS_IN_AVAILABILITY = "//a[@id='button-f4e1544f40'] ";
+    public static final String BMW_ConnectedDrive = "//a[@analytics-event='footer-the-bmw-difference.bmw-connecteddrive.link']";
 }
