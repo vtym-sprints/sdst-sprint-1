@@ -20,6 +20,8 @@ abstract public class AbstractBasePage {
     protected WebDriverWait wait;
     private int BASE_WAIT = 15000;
     private final String CIRCLE_LOADER = "//div[@class='load-indicator_loader_njc5r']";
+    private final String VEHICLE_LOADER = "//figure[@class='vehicle-info-loader']";
+    public final String BUTTON_LOADER = "//div[@class='pe-button__cta-holder loading']//figure[@class='pe-payment-options-card__loader']";
 
     public AbstractBasePage(WebDriver driver) {
         this.driver = driver;
@@ -62,8 +64,20 @@ abstract public class AbstractBasePage {
     }
 
     @SneakyThrows
-    public void isTillLoader() {
+    public void waitTillCircleLoaderDisappear() {
         waitUntilElementToBeInvisibilityByXpath(CIRCLE_LOADER);
+        sleep(100);
+    }
+
+    @SneakyThrows
+    public void waitTillVehicleLoaderDisappear() {
+        waitUntilElementToBeInvisibilityByXpath(VEHICLE_LOADER);
+        sleep(100);
+    }
+
+    @SneakyThrows
+    public void waitTillButtonLoaderDisappear() {
+        waitUntilElementToBeInvisibilityByXpath(BUTTON_LOADER);
         sleep(100);
     }
 }

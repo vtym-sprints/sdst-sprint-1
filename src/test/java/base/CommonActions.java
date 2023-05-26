@@ -9,8 +9,10 @@ import org.openqa.selenium.support.ui.Select;
 public class CommonActions {
 
     public static void scrollToElement(WebElement element, WebDriver driver) {
-        JavascriptExecutor js2 = (JavascriptExecutor) driver;
-        js2.executeScript("arguments[0].scrollIntoView(true);", element);
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        var elementPosition = element.getLocation().getY();
+        var jsCommand = "window.scroll(" + 0 + "," + (elementPosition - (driver.manage().window().getSize().getHeight() / 2)) + ");";
+        js.executeScript(jsCommand);
     }
 
     public static void jsClick(WebElement element, WebDriver driver) {

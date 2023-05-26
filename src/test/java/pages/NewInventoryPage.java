@@ -77,7 +77,7 @@ public class NewInventoryPage extends NewInventoryElements {
         getPriceFilterContainer().click();
         getPriceFilterMinLister().click();
         getPriceFilterMin60k().click();
-        isTillLoader();
+        waitTillCircleLoaderDisappear();
         return this;
     }
 

@@ -5,13 +5,13 @@ import org.testng.annotations.Test;
 import pages.EstimatePaymentPage;
 import pages.HomePage;
 
-import static java.lang.Thread.sleep;
+import static org.testng.Assert.assertTrue;
 
 public class EstimatePaymentTest extends AbstractBaseTest {
     private String zipCode = "90001";
 
     @Test
-    public void checkEstimatePayment() throws InterruptedException {
+    public void checkEstimatePayment() {
         HomePage homePage = new HomePage(driver);
         EstimatePaymentPage estimatePaymentPage = new EstimatePaymentPage(driver);
 
@@ -23,15 +23,18 @@ public class EstimatePaymentTest extends AbstractBaseTest {
                 .chose8Series()
                 .chose840iGranCoupe()
                 .enterZIpCode(zipCode)
-                .isTillLoader();
+                .waitTillVehicleLoaderDisappear();
         estimatePaymentPage
-                .clickEstimatePayments();
+                .clickEstimatePayments()
+                .waitTillCircleLoaderDisappear();
 
-        //sleep(4000);
         estimatePaymentPage
-                .scroll42FinanceTerms()
-                .chose42FinanceTerms()
-                .chose30LeaseTerms()
-                .choseAnnualMileage();
+                .selectMonthFinancePaymentOption("42")
+                .waitTillButtonLoaderDisappear();
+
+        double monthFinancePaymentOptions =
+                estimatePaymentPage.calculateMonthlyPayment(estimatePaymentPage.getPriceOfCar(), 42);
+        String formattedValue = String.format("%.2f", monthFinancePaymentOptions);
+        assertTrue(Double.parseDouble(formattedValue) == 2298.65);
     }
 }
