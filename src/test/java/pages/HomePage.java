@@ -152,4 +152,10 @@ public class HomePage extends HomePageElements {
         waitUntilElementToBeClickableByXpath(BMW_ConnectedDrive).click();
         return new BMWConnectedDrivePage(driver);
     }
+
+    public EstimatePaymentPage clickEstimatePayment(){
+        scrollToElement(waitUntilPresenceOfElementByXpath(FOOTER_MENU),driver);
+        waitUntilElementToBeClickableByXpath(ESTIMATE_PAYMENT_IN_FOOTER).click();
+        return new EstimatePaymentPage(driver);
+    }
 }

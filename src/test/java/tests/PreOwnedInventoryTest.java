@@ -49,10 +49,10 @@ public class PreOwnedInventoryTest extends AbstractBaseTest {
                 .scrollToPriceFilter()
                 .clickPriceFilter()
                 .chooseRandomMinPrice()
-                .isTillLoader();
+                .waitTillCircleLoaderDisappear();
         shopPreOwnedInventoryPage
                 .chooseRandomMaxPrice()
-                .isTillLoader();
+                .waitTillCircleLoaderDisappear();
 
         int minPrice = parseInt(replacePrice(shopPreOwnedInventoryPage.getChooseMinPrice()));
         int maxPrice = parseInt(replacePrice(shopPreOwnedInventoryPage.getChooseMaxPrice()));
