@@ -35,4 +35,5 @@ public class HomePageElements extends AbstractBasePage {
     public static final String CARS_IN_AVAILABILITY = "//a[@id='button-f4e1544f40'] ";
     public static final String BUTTON_BMW_MOTORCYCLES =
             "//div[contains(@class,'globalnav-footer__inner-holder-flex')]//a[contains(text(),'BMW Motorcycles')]";
+    public static final String BMW_ConnectedDrive = "//a[@analytics-event='footer-the-bmw-difference.bmw-connecteddrive.link']";
 }
