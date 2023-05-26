@@ -81,4 +81,22 @@ public class BuildYourOwnElements extends AbstractBasePage {
     public static final String XM_WHITE_COLOR = "//div[contains(text(), 'White')]";
     public static final String XM_ORANGE_LEATHER = "//div[contains(text(), 'Orange')]";
     public static final String XM_SELECT_BUILD = "//a[@href='/build-your-own.html#/studio/23SR']";
+    public static final String SELECT_BUTTON_BMW_IX = "//a[@title='iX Sports Activity Vehicle']";
+    public static final String BUTTON_DESIGN_IX = "//a[@title='2024 BMW iX xDrive50']";
+    public static final String PRICE_BASE_CAR = "(//div[@class='variant-price byo-core-type theme-gkl headline-6'])[1]";
+    public static final String PRICE_SPORTS_IX =
+            "//div[@title='Sport']//div[@class='price byo-core-type label-2 theme-core']";
+    public static final String BUTTON_SPORTS_IX =
+            "//div[@title='Sport']//figure[@class='byo-rail-option-selector__thumb']";
+    public static final String POP_UP_SPORTS_WINDOW = "//button[@aria-label='Confirm Button']";
+    public static final String BUTTON_STORM_BAY_METALLIC =
+            "//div[@title='Storm Bay Metallic']";
+    public static final String PRICE_STORM_BY_METALLIC =
+            "//div[@title='Storm Bay Metallic']//div[@class='price byo-core-type label-2 theme-core']";
+    public static final String BUTTON_BI_COLOR_WHEELS = "//div[@style='order: 9; animation-delay: 2.6s;']";
+    public static final String PRICE_BI_COLLOR_WHEELS =
+            "//div[@style='order: 9; animation-delay: 2.6s;']//div[@class='price byo-core-type label-2 theme-core']";
+    public static final String BUTTON_CASTANEA_CHESTNUT = "//div[@title='Castanea Chestnut Perforated Leather']";
+    public static final String PRICE_CASTANEA_CHESTNUT =
+            "//div[contains(@title,'Castanea Chestnut')]//div[@class='price core-type label-2 theme-core']";
 }

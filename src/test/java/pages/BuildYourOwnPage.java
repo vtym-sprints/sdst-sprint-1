@@ -297,4 +297,30 @@ public class BuildYourOwnPage extends BuildYourOwnElements {
             return false;
         }
     }
+
+    public BuildYourOwnPage clickButton(String nameButton) {
+        waitUntilElementToBeClickableByXpath(nameButton).click();
+        return this;
+    }
+
+    public String getPriceElement(String nameElement) {
+        return waitUntilElementToBeClickableByXpath(nameElement)
+                .getText().replaceAll("[\\$,]", "");
+    }
+
+    public BuildYourOwnPage scrollAndClickButtonInSelectMenu(String nameSelect) {
+        scrollToElement(waitUntilElementToBeClickableByXpath(nameSelect), driver);
+        waitUntilElementToBeClickableByXpath(nameSelect).click();
+        return this;
+    }
+
+    public BuildYourOwnPage closeZipCodePopUp() {
+        waitUntilElementToBeClickableByXpath(FIND_A_DEALER_CLOSE_BTN).click();
+        return this;
+    }
+
+    public BuildYourOwnPage clickButtonConfirm() {
+        waitUntilElementToBeClickableByXpath(POP_UP_SPORTS_WINDOW).click();
+        return this;
+    }
 }
