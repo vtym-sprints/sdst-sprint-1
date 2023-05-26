@@ -24,7 +24,7 @@ public class BMWConnectedDriveTest extends AbstractBaseTest {
                 .clickDownloadTrafficCameraInformation()
                 .clickDownloadRemoteEngineStart()
                 .clickDownloadParkingAssistantProfessional()
-                .isTillLoader();
+                .waitTillCircleLoaderDisappear();
 
         String firstFilename = bmwConnectedDrivePage.readPdfContent(filePathTrafficCameraInformation);
         assertThat(firstFilename)
