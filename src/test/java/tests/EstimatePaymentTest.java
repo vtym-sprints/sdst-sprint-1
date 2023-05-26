@@ -35,6 +35,7 @@ public class EstimatePaymentTest extends AbstractBaseTest {
         double monthFinancePaymentOptions =
                 estimatePaymentPage.calculateMonthlyPayment(estimatePaymentPage.getPriceOfCar(), 42);
         String formattedValue = String.format("%.2f", monthFinancePaymentOptions);
+
         assertTrue(Double.parseDouble(formattedValue) == 2298.65);
     }
 }
