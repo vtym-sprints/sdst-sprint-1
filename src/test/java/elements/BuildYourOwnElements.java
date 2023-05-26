@@ -81,7 +81,6 @@ public class BuildYourOwnElements extends AbstractBasePage {
     public static final String XM_WHITE_COLOR = "//div[contains(text(), 'White')]";
     public static final String XM_ORANGE_LEATHER = "//div[contains(text(), 'Orange')]";
     public static final String XM_SELECT_BUILD = "//a[@href='/build-your-own.html#/studio/23SR']";
-
     public static final String SELECT_BUTTON_BMW_IX = "//a[@title='iX Sports Activity Vehicle']";
     public static final String BUTTON_DESIGN_IX = "//a[@title='2024 BMW iX xDrive50']";
     public static final String PRICE_BASE_CAR = "(//div[@class='variant-price byo-core-type theme-gkl headline-6'])[1]";
